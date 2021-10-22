@@ -210,6 +210,15 @@ export default function PrimarySearchAppBar() {
               About
             </Button>
 
+            <Button
+              variant="contained"
+              onClick={() => {
+                history.push("/lineup")
+              }}
+            >
+              Lineup
+            </Button>
+
             <IconButton
               size="large"
               aria-label="show 4 new mails"
