@@ -8,6 +8,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import Lineup from "./routes/Lineup";
 
 export default function App() {
   return (
@@ -21,6 +22,9 @@ export default function App() {
           </Route>
           <Route path="/">
             <Home />
+          </Route>
+          <Route path="/lineup">
+            <Lineup />
           </Route>
         </Switch>
       </div>
