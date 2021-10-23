@@ -1,0 +1,9 @@
+.artist-img {
+  object-fit: cover;
+  width: 100%;
+  max-height: 300px;
+}
+
+.max-lines-4 {
+ 
+}

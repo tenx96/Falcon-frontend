@@ -1,33 +1,60 @@
-import PrimarySearchAppBar from "./components/PrimarySearchAppBar";
 import React from "react";
-import Home from "./routes/Home";
-import About from "./routes/About";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-import Lineup from "./routes/Lineup";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import ApplicationBar from "./components/ApplicationBar";
+import About, { ROUTE_ABOUT } from "./routes/About";
+import Home, { ROUTE_HOME } from "./routes/Home";
+import Lineup, { ROUTE_LINEUP } from "./routes/Lineup";
+import Tourism, { ROUTE_TOURISM } from "./routes/Tourism";
+import { createTheme } from "@mui/material/styles";
+import { green, purple } from "@mui/material/colors";
+import { ThemeProvider } from "@emotion/react";
 
 export default function App() {
-  return (
+  const routes = [
+    {
+      label: "Home",
+      route: ROUTE_HOME,
+    },
+    {
+      label: "About",
+      route: ROUTE_ABOUT,
+    },
+    {
+      label: "Lineup",
+      route: ROUTE_LINEUP,
+    },
+    {
+      label: "Tourism",
+      route: ROUTE_TOURISM,
+    },
+  ];
 
-    <Router>
-      <PrimarySearchAppBar/>
-      <div>
-        <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-          <Route path="/lineup">
-            <Lineup />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: purple[500],
+      },
+      secondary: {
+        main: green[500],
+      },
+    },
+  });
+
+  return (
+    <React.StrictMode>
+      <ThemeProvider theme={theme}>
+        <Router>
+          <div>
+            <ApplicationBar title="Falcon Festival" routes={routes} />
+            <Switch>
+              <Route path={ROUTE_ABOUT} component={About} />
+              <Route path={ROUTE_LINEUP} component={Lineup} />
+              <Route path={ROUTE_TOURISM} component={Tourism} />
+              <Route path={ROUTE_HOME} component={Home} />
+            </Switch>
+          </div>
+        </Router>
+      </ThemeProvider>
+    </React.StrictMode>
   );
 }
