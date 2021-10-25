@@ -55,7 +55,7 @@ export default function Home() {
                     />
                   </Grid>
                 </Grid>
-                <Grid item xs={8}>
+                <Grid mx={3} item xs={12} sm={10} md={8}>
                   <Schedule></Schedule>
                 </Grid>
 
