@@ -8,6 +8,7 @@ import Tourism, { ROUTE_TOURISM } from "./routes/Tourism";
 import { createTheme } from "@mui/material/styles";
 import { green, purple } from "@mui/material/colors";
 import { ThemeProvider } from "@emotion/react";
+import Navbar from "components/Navbar";
 
 export default function App() {
   const routes = [
@@ -45,7 +46,8 @@ export default function App() {
       <ThemeProvider theme={theme}>
         <Router>
           <div>
-            <ApplicationBar title="Falcon Festival" routes={routes} />
+            {/* <ApplicationBar title="Falcon Festival" routes={routes} /> */}
+            <Navbar title="Falcon Festival" routes={routes}/>
             <Switch>
               <Route path={ROUTE_ABOUT} component={About} />
               <Route path={ROUTE_LINEUP} component={Lineup} />

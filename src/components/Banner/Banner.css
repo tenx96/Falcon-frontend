@@ -1,5 +1,6 @@
 .banner-image {
+    margin-top: -2px; /* to make drop shadow for small screen */
     width: 100%;
-    height: 900px;
+    /* height: 900px; */
     object-fit: fill;
 }

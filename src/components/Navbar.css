@@ -1,0 +1,51 @@
+.navbar{
+    color: white;
+  }
+  .navbar-fixed-top {
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    min-height: 64px;
+    z-index: 5;
+    position: absolute;
+    top: 0;
+    border-width: 0 0 1px;
+    width: 100%;
+    box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
+  }
+  .navbar-brand{
+    color: white !important;
+    margin: 0;
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    letter-spacing: 0.0075em;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+  }
+  .navbar-nav li{
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
+    font-weight: 500;
+    font-size: 0.875rem;
+    line-height: 1.75;
+    letter-spacing: 0.02857em;
+    text-transform: uppercase;
+    min-width: 64px;
+    padding: 6px 8px;
+    border-radius: 4px;
+  }
+  .nav-link{
+    color: whitesmoke !important;
+  }
+
+  @media screen and (max-width:800px) {
+    .navbar-fixed-top{
+      position: relative;
+      background: #313131;
+    }
+    
+  }

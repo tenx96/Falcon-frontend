@@ -1,5 +1,5 @@
 import React from 'react'
-import bannerImage from "assets/banner.jpeg"
+import bannerImage from "assets/banner.svg"
 import "./Banner.css"
 export default function ImageButton() {
     return (
