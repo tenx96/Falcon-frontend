@@ -1,4 +1,4 @@
-import { Container, Grid, Paper } from "@mui/material";
+import { Container, Grid, Paper, useMediaQuery, useTheme } from "@mui/material";
 import ArtistCard from "components/ArtistCard";
 import BannerImage from "components/Banner";
 import DetailCard from "components/DetailCard";
@@ -9,13 +9,22 @@ import Sponsors from "./Sponsors";
 export const ROUTE_HOME = "/";
 
 export default function Home() {
+  const theme = useTheme();
+  const smAndUp = useMediaQuery(theme.breakpoints.up("md"));
+  const lgAndUp = useMediaQuery(theme.breakpoints.up("lg"));
+
   return (
     <div style={{ width: "100%" }}>
-      <BannerImage></BannerImage>
-
+      <BannerImage/>
       <div className="home-container">
         <div>
-          <Container className="home-container-content" maxWidth="xl">
+          <Container
+            sx={{
+              top: lgAndUp ? "-20rem" : smAndUp ? "-15rem" : "-5rem",
+            }}
+            className={`home-container-content`}
+            maxWidth="xl"
+          >
             <Paper
               elevation={4}
               sx={{ bgcolor: "#FAFAFA", height: "100%", pb: 5 }}
@@ -45,17 +54,14 @@ export default function Home() {
                       image="http://placekitten.com/300"
                     />
                   </Grid>
-
                 </Grid>
-                  <Grid item xs={8}>
-                      <Schedule></Schedule>
-                  </Grid>
+                <Grid item xs={8}>
+                  <Schedule></Schedule>
+                </Grid>
 
-                  <Grid item xs={12}>
-                      <Sponsors/>
-                  </Grid>
-
-
+                <Grid item xs={12}>
+                  <Sponsors />
+                </Grid>
               </Grid>
             </Paper>
           </Container>
