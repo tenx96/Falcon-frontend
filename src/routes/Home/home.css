@@ -3,11 +3,7 @@
     width: 100%;
 }
 
-.home-container-banner {
-    position: absolute;
-}
 .home-container-content {
-    position: absolute;
     height: fit-content;
     left: 0;
     right: 0;

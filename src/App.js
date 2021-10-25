@@ -1,14 +1,14 @@
+import { ThemeProvider } from "@emotion/react";
+import { green, purple } from "@mui/material/colors";
+import { createTheme } from "@mui/material/styles";
+import Footer from "components/Footer";
+import Navbar from "components/Navbar";
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import ApplicationBar from "./components/ApplicationBar";
 import About, { ROUTE_ABOUT } from "./routes/About";
 import Home, { ROUTE_HOME } from "./routes/Home";
 import Lineup, { ROUTE_LINEUP } from "./routes/Lineup";
 import Tourism, { ROUTE_TOURISM } from "./routes/Tourism";
-import { createTheme } from "@mui/material/styles";
-import { green, purple } from "@mui/material/colors";
-import { ThemeProvider } from "@emotion/react";
-import Navbar from "components/Navbar";
 
 export default function App() {
   const routes = [
@@ -47,13 +47,14 @@ export default function App() {
         <Router>
           <div>
             {/* <ApplicationBar title="Falcon Festival" routes={routes} /> */}
-            <Navbar title="Falcon Festival" routes={routes}/>
+            <Navbar title="Falcon Festival" routes={routes} />
             <Switch>
               <Route path={ROUTE_ABOUT} component={About} />
               <Route path={ROUTE_LINEUP} component={Lineup} />
               <Route path={ROUTE_TOURISM} component={Tourism} />
               <Route path={ROUTE_HOME} component={Home} />
             </Switch>
+            <Footer></Footer>
           </div>
         </Router>
       </ThemeProvider>

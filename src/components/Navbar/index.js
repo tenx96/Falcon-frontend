@@ -11,8 +11,8 @@ function Navbar({ title, routes }) {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                        {routes.map((item) => (
-                            <li className="nav-item">
+                        {routes.map((item , index) => (
+                            <li key={index} className="nav-item">
                                 <a className="nav-link active" aria-current="page" href={item.route}>{item.label}</a>
                             </li>
                         ))}
