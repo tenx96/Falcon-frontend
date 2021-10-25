@@ -17,7 +17,7 @@ function Day1() {
           <img
             className="artist-image"
             src={`http://unsplash.it/300/35${i}?random&gravity=center`}
-            alt="image"
+            alt="some random image"
           />
         </Grid>
       ))}
@@ -75,7 +75,7 @@ export default function Schedule() {
             onClick={() => {
               setTab(0);
             }}
-            variant={tab == 0 ? "contained" : "outlined"}
+            variant={tab === 0 ? "contained" : "outlined"}
           >
             Day 1
           </Button>
@@ -83,7 +83,7 @@ export default function Schedule() {
             onClick={() => {
               setTab(1);
             }}
-            variant={tab == 1 ? "contained" : "outlined"}
+            variant={tab === 1 ? "contained" : "outlined"}
           >
             Day 2
           </Button>

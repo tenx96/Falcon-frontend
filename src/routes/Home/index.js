@@ -5,6 +5,7 @@ import DetailCard from "components/DetailCard";
 import React from "react";
 import "./home.css";
 import Schedule from "./Schedule";
+import Sponsors from "./Sponsors";
 export const ROUTE_HOME = "/";
 
 export default function Home() {
@@ -49,6 +50,11 @@ export default function Home() {
                   <Grid item xs={8}>
                       <Schedule></Schedule>
                   </Grid>
+
+                  <Grid item xs={12}>
+                      <Sponsors/>
+                  </Grid>
+
 
               </Grid>
             </Paper>
