@@ -1,0 +1,15 @@
+.ticket-container {
+    height: 300px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    background-size: contain;
+}
+
+.ticket-button {
+    background : "white";
+    color: black;
+    border-radius: 100px;
+}
