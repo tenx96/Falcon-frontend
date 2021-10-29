@@ -2,22 +2,30 @@ import {
   Container,
   Grid,
   Paper,
+  Typography,
   useMediaQuery,
   useTheme,
-  Box,
-  Typography,
 } from "@mui/material";
 import ArtistCard from "components/ArtistCard";
 import BannerImage from "components/Banner";
-import DetailCard from "components/DetailCard";
-import Footer from "components/Footer";
 import React from "react";
+import GalleryImages from "./Gallery";
 import "./home.css";
 import NavigationCards from "./NavigationCards";
+import PosterCard from "./PosterCard";
 import Schedule from "./Schedule";
 import Sponsors from "./Sponsors";
 import TicketCard from "./TicketCard";
 import VipCard from "./VipCard";
+import poster1 from "assets/poster-1.jpg";
+import poster2 from "assets/poster-2.jpg";
+import poster3 from "assets/poster-3.jpg";
+import poster4 from "assets/poster-4.jpg";
+import PosterSlider from "./PosterCard";
+import SocialSection from "./Social";
+
+const posters = [poster1, poster2, poster3, poster4];
+
 export const ROUTE_HOME = "/";
 
 export default function Home() {
@@ -69,6 +77,25 @@ export default function Home() {
                 <Schedule></Schedule>
               </Grid>
 
+              <Grid mt={8} item container md={12} xs={12}>
+                <Grid mb={6} xs={12}>
+                  <Typography
+                    align="center"
+                    fontWeight="bold"
+                    variant="h4"
+                    component="div"
+                  >
+                    News and Announcements
+                  </Typography>
+                </Grid>
+                <Grid item xs={12} md={8}>
+                  <PosterSlider images={posters} />
+                </Grid>
+                <Grid my="auto" px={3} item xs={12} md={4}>
+                  <SocialSection />
+                </Grid>
+              </Grid>
+
               <Grid mt={20} item xs={12}>
                 <VipCard
                   title="Message from PM"
@@ -87,7 +114,14 @@ export default function Home() {
                 item
               >
                 <Grid item xs={12}>
-                  <Typography align="center" fontWeight="bold" variant="h5" component="div">Plan your Visit</Typography>
+                  <Typography
+                    align="center"
+                    fontWeight="bold"
+                    variant="h4"
+                    component="div"
+                  >
+                    Plan your Visit
+                  </Typography>
                 </Grid>
 
                 <Grid item xs={12} md={4}>
@@ -111,6 +145,10 @@ export default function Home() {
                     subTitle="Nisi ipsum sint nulla occaecat non commodo nostrud aliquip esse consequat cillum minim elit eu."
                   />
                 </Grid>
+              </Grid>
+
+              <Grid mx={4} mt={10} item xs={12}>
+                <GalleryImages />
               </Grid>
 
               <Grid item xs={12}>

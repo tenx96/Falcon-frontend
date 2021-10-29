@@ -1,0 +1,10 @@
+.woven-image {
+    max-height: 250px;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+.embed-video {
+    display: block;
+    margin: 0 auto;
+}

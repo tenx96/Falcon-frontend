@@ -28,6 +28,7 @@ function Sponsors() {
             variant="h3"
             gutterBottom
             component="div"
+            fontWeight="bold"
           >
             Meet our sponsors
           </Typography>

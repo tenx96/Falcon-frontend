@@ -1,4 +1,11 @@
-import { Button, Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Title } from "@mui/icons-material";
+import {
+  Button,
+  Grid,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import * as React from "react";
 import "../home.css";
 import MobileImageSlider from "./MobileSchedule";
@@ -53,10 +60,20 @@ const day2Data = {
   images: imagesDay2.map((img) => img.imgPath),
 };
 
-function Day1({ description, images }) {
+function Day1({ description, images, title = "The show begins" }) {
   return (
     <Grid spacing={1} container justifyContent="center" alignItems="center">
       <Grid item xs={4}>
+        <Typography
+          sx={{
+            mb: 3,
+          }}
+          fontWeight="bold"
+          variant="h4"
+          color="text.secondary"
+        >
+          {title}
+        </Typography>
         <Typography variant="body1" color="text.secondary">
           {description}
         </Typography>
@@ -70,10 +87,21 @@ function Day1({ description, images }) {
   );
 }
 
-function Day2({ description, images }) {
+function Day2({ description, images, title = "The final day" }) {
   return (
     <Grid spacing={1} container justifyContent="center" alignItems="center">
       <Grid item xs={3}>
+        <Typography
+          sx={{
+            mb: 3,
+          }}
+          variant="h4"
+          fontWeight="bold"
+          color="text.secondary"
+        >
+          {title}
+        </Typography>
+
         <Typography variant="body1" color="text.secondary">
           {description}
         </Typography>
@@ -106,18 +134,17 @@ function MobileView({ description, images }) {
 export default function Schedule({}) {
   const [tab, setTab] = React.useState(0);
 
-  const theme = useTheme()
-  const mdAndUp = useMediaQuery(theme.breakpoints.up("md"))
-
+  const theme = useTheme();
+  const mdAndUp = useMediaQuery(theme.breakpoints.up("md"));
 
   return (
     <div>
       <Grid container justifyContent="center" alignItems="center">
         <Grid item xs={12} marginTop="24px">
-          {(tab == 0 && mdAndUp) && <Day1 {...day1Data} />}
-          {(tab == 0 && !mdAndUp) && <MobileView {...day1Data} />}
-          {(tab == 1 && mdAndUp) && <Day2 {...day2Data} />}
-          {(tab == 1 && !mdAndUp) && <MobileView {...day2Data} />}
+          {tab == 0 && mdAndUp && <Day1 {...day1Data} />}
+          {tab == 0 && !mdAndUp && <MobileView {...day1Data} />}
+          {tab == 1 && mdAndUp && <Day2 {...day2Data} />}
+          {tab == 1 && !mdAndUp && <MobileView {...day2Data} />}
         </Grid>
         <Grid
           item
