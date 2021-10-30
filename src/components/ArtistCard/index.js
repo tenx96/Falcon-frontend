@@ -27,7 +27,7 @@ function ArtistCard({ title, description, image }) {
             {title}
           </Typography>
 
-          <Typography textAlign="center" variant="body1" gutterBottom>
+          <Typography color="text.secondary" textAlign="center" variant="subtitle1" gutterBottom>
             {description}
           </Typography>
           <Box

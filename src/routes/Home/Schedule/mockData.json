@@ -1,0 +1,42 @@
+{
+    "day1": {
+        "title": "The show starts",
+        "description": "Eiusmod officia ut excepteur consequat ut reprehenderit pariatur aliquip. Minim id occaecat adipisicing est labore culpa enim occaecat exercitation nostrud. Ut sunt ullamco commodo duis sint enim ullamco nisi sint aliqua sunt amet. Irure anim do irure amet eu adipisicing minim non sunt. Cillum fugiat incididunt do consequat Lorem incididunt laboris nisi. Qui incididunt veniam non culpa.",
+        "images": [
+            {
+                "label": "San Francisco – Oakland Bay Bridge, United States",
+                "imgPath": "https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60"
+            },
+            {
+                "label": "Bird",
+                "imgPath": "https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=400&h=250&q=60"
+            },
+            {
+                "label": "Bali, Indonesia",
+                "imgPath": "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&h=250&q=80"
+            },
+            {
+                "label": "Goč, Serbia",
+                "imgPath": "https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=400&h=250&q=60"
+            }
+        ]
+    },
+    "day2": {
+        "title": "The final day",
+        "description": "Labore magna aute ex elit incididunt quis sint elit id laborum sit laboris. Irure adipisicing pariatur aute velit consectetur ullamco do cupidatat nostrud incididunt est ut laborum. Veniam nostrud pariatur aute ut Lorem ex ad. Aliquip esse minim adipisicing ipsum cillum Lorem eiusmod elit nulla sunt aliquip velit eu. Ea aliqua officia et cillum.",
+        "images": [
+            {
+                "label": "San Francisco – Oakland Bay Bridge, United States",
+                "imgPath": "http://unsplash.it/300/355?random&gravity=center"
+            },
+            {
+                "label": "Bird",
+                "imgPath": "http://unsplash.it/300/351?random&gravity=center"
+            },
+            {
+                "label": "Bali, Indonesia",
+                "imgPath": "http://unsplash.it/300/352?random&gravity=center"
+            }
+        ]
+    }
+}

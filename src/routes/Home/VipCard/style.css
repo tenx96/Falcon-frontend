@@ -1,7 +1,13 @@
 .vip-img {
-    object-fit: cover;
-    width: 100%;
-    max-height: 300px;
-  }
+  object-fit: cover;
+  width: 100%;
+  max-height: 300px;
+}
 
-  
+.truncate-lines {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}

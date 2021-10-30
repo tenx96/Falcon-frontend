@@ -1,4 +1,5 @@
 import { Container, Grid, Typography, Button, Box } from "@mui/material";
+import ExpandableTypography from "components/ExpandableTypography";
 import React from "react";
 import "./style.css";
 function VipCard({ title, description, image }) {
@@ -24,9 +25,9 @@ function VipCard({ title, description, image }) {
             {title}
           </Typography>
 
-          <Typography textAlign="center" component="p" variant="body1" gutterBottom>
+          <ExpandableTypography   maxLines={5} color="text.secondary" textAlign="center" component="p" variant="subtitle1" gutterBottom>
             {description}
-          </Typography>
+          </ExpandableTypography>
           <Box
             sx={{
               mt: 4,

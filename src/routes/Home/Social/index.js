@@ -25,29 +25,29 @@ const socialIcons = [
 
 function SocialSection() {
   const theme = useTheme();
-  const smAndDown = useMediaQuery(theme.breakpoints.down("sm"));
+  const mdAndDown = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
     <div>
       <Box mb={3}>
-        <Typography variant="h4" fontWeight="bold">
+        <Typography align={mdAndDown ? "center" : "start"} variant="h4" fontWeight="bold">
           Follow us to stay updated
         </Typography>
       </Box>
 
-      <Box display={smAndDown && "flex"} justifyContent="center">
+      <Box display={mdAndDown && "flex"} justifyContent="center">
         {socialIcons.map((item, i) => (
           <Box
             display="flex"
             justifyContent="start"
             alignItems="center"
             key={i}
-            mr={(smAndDown &&  i <socialIcons.length-1) && 3}
+            mr={(mdAndDown &&  i <socialIcons.length-1) && 3}
           >
             <Icon
               
               sx={{
-                mr: smAndDown ? 1 : 3,
+                mr: mdAndDown ? 1 : 3,
                 color: item.color
               }}
               className={item.icon}

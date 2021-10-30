@@ -22,7 +22,7 @@ function Tourism() {
         {[1, 2, 3, 4, 5].map((num) => (
           <Box mt={10}>
             <TourismCard
-              right={num % 2 == 0}
+              right={num % 2 === 0}
               title="Panimur"
               description="Aliquip laborum duis amet adipisicing duis ad in esse tempor do eiusmod. Fugiat cillum ex eu nisi. Nulla ad deserunt ut veniam fugiat Lorem. Aliqua id laboris cillum ut officia id consequat. Amet ullamco fugiat in reprehenderit aliquip excepteur do duis aute."
               image={`http://unsplash.it/300/40${num}?random&gravity=center`}

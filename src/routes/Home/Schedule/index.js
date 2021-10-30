@@ -6,64 +6,30 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
+import ExpandableTypography from "components/ExpandableTypography";
 import * as React from "react";
 import "../home.css";
 import MobileImageSlider from "./MobileSchedule";
 
-const imagesDay1 = [
-  {
-    label: "San Francisco – Oakland Bay Bridge, United States",
-    imgPath:
-      "https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60",
-  },
-  {
-    label: "Bird",
-    imgPath:
-      "https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=400&h=250&q=60",
-  },
-  {
-    label: "Bali, Indonesia",
-    imgPath:
-      "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&h=250&q=80",
-  },
-  {
-    label: "Goč, Serbia",
-    imgPath:
-      "https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=400&h=250&q=60",
-  },
-];
+import mockData from "./mockData.json";
 
-const imagesDay2 = [
-  {
-    label: "San Francisco – Oakland Bay Bridge, United States",
-    imgPath: "http://unsplash.it/300/355?random&gravity=center",
-  },
-  {
-    label: "Bird",
-    imgPath: "http://unsplash.it/300/351?random&gravity=center",
-  },
-  {
-    label: "Bali, Indonesia",
-    imgPath: "http://unsplash.it/300/352?random&gravity=center",
-  },
-];
-
-const day1Data = {
-  description:
-    "Lorem Lorem ad occaecat commodo eiusmod Lorem incididunt voluptate ad minim. Deserunt duis incididunt laboris magna et sit qui in duis pariatur voluptate velit. Adipisicing magna quis officia id irure nulla laborum aliquip.",
-  images: imagesDay1.map((img) => img.imgPath),
+const parseData = (data) => {
+  return { ...data, images: data.images.map((item) => item.imgPath) };
 };
 
-const day2Data = {
-  description:
-    "Aaboris magna et sit qui in duis pariatur voluptate velit. Adipisicing magna quis officia id irure nulla laborum aliquip.",
-  images: imagesDay2.map((img) => img.imgPath),
-};
+function DesktopSchedule({
+  description,
+  images,
+  title = "The show begins",
+  threeTiles = false,
+}) {
+  const maxImages = threeTiles ? 3 : 4;
 
-function Day1({ description, images, title = "The show begins" }) {
+  const slicedImages = images.slice(0, maxImages);
+
   return (
     <Grid spacing={1} container justifyContent="center" alignItems="center">
-      <Grid item xs={4}>
+      <Grid item xs={threeTiles ? 3 : 4}>
         <Typography
           sx={{
             mb: 3,
@@ -74,12 +40,17 @@ function Day1({ description, images, title = "The show begins" }) {
         >
           {title}
         </Typography>
-        <Typography variant="body1" color="text.secondary">
+        <ExpandableTypography
+          maxLines={8}
+          extreme={12}
+          variant="subtitle1"
+          color="text.secondary"
+        >
           {description}
-        </Typography>
+        </ExpandableTypography>
       </Grid>
-      {images.map((image, i) => (
-        <Grid key={i} item xs={2}>
+      {slicedImages.map((image, i) => (
+        <Grid key={i} item xs={threeTiles ? 3 : 2}>
           <img className="artist-image" src={image} alt="some random image" />
         </Grid>
       ))}
@@ -87,41 +58,28 @@ function Day1({ description, images, title = "The show begins" }) {
   );
 }
 
-function Day2({ description, images, title = "The final day" }) {
+function MobileView({ title, description, images }) {
   return (
     <Grid spacing={1} container justifyContent="center" alignItems="center">
-      <Grid item xs={3}>
+      <Grid item xs={4}>
         <Typography
           sx={{
             mb: 3,
           }}
-          variant="h4"
           fontWeight="bold"
+          variant="h4"
           color="text.secondary"
         >
           {title}
         </Typography>
-
-        <Typography variant="body1" color="text.secondary">
+        <ExpandableTypography
+          maxLines={6}
+          extreme={11}
+          variant="body1"
+          color="text.secondary"
+        >
           {description}
-        </Typography>
-      </Grid>
-      {images.map((image, i) => (
-        <Grid key={i} item xs={3}>
-          <img className="artist-image" src={image} alt="some image" />
-        </Grid>
-      ))}
-    </Grid>
-  );
-}
-
-function MobileView({ description, images }) {
-  return (
-    <Grid spacing={1} container justifyContent="center" alignItems="center">
-      <Grid item xs={4}>
-        <Typography variant="body1" color="text.secondary">
-          {description}
-        </Typography>
+        </ExpandableTypography>
       </Grid>
 
       <Grid item xs={8}>
@@ -141,10 +99,14 @@ export default function Schedule({}) {
     <div>
       <Grid container justifyContent="center" alignItems="center">
         <Grid item xs={12} marginTop="24px">
-          {tab == 0 && mdAndUp && <Day1 {...day1Data} />}
-          {tab == 0 && !mdAndUp && <MobileView {...day1Data} />}
-          {tab == 1 && mdAndUp && <Day2 {...day2Data} />}
-          {tab == 1 && !mdAndUp && <MobileView {...day2Data} />}
+          {tab == 0 && mdAndUp && (
+            <DesktopSchedule {...parseData(mockData.day1)} />
+          )}
+          {tab == 0 && !mdAndUp && <MobileView {...parseData(mockData.day1)} />}
+          {tab == 1 && mdAndUp && (
+            <DesktopSchedule {...parseData(mockData.day2)} />
+          )}
+          {tab == 1 && !mdAndUp && <MobileView {...parseData(mockData.day2)} />}
         </Grid>
         <Grid
           item
