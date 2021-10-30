@@ -23,6 +23,7 @@ import poster3 from "assets/poster-3.jpg";
 import poster4 from "assets/poster-4.jpg";
 import PosterSlider from "./PosterCard";
 import SocialSection from "./Social";
+import AboutFalcon from "./About";
 
 const posters = [poster1, poster2, poster3, poster4];
 
@@ -147,8 +148,14 @@ export default function Home() {
                 </Grid>
               </Grid>
 
+
+
               <Grid mx={4} mt={10} item xs={12}>
                 <GalleryImages />
+              </Grid>
+
+              <Grid mt={10} item xs={12} md={6} lg={8}>
+                <AboutFalcon title="About Falcon Festival" description="Cupidatat duis Lorem dolor ullamco ipsum nostrud velit enim esse tempor anim sunt. Aliqua dolore velit pariatur velit deserunt consectetur. Veniam culpa nostrud ipsum elit duis culpa veniam culpa proident. Fugiat esse enim est consequat laborum ex consequat id. Sunt cupidatat tempor ex cupidatat magna sunt veniam nisi elit consectetur "/>
               </Grid>
 
               <Grid item xs={12}>
