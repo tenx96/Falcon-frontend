@@ -1,5 +1,5 @@
 import React from "react";
-// import Artists from "./Artists";
+import Artists from "./Artists";
 import Events from "./Events";
 import "./style.css"
 
@@ -33,7 +33,7 @@ export default function Lineup() {
           </div>
         </div>
       </div>
-      {/* <Artists/> */}
+      <Artists/>
       <Events/>
     </div>
   );
