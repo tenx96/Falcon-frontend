@@ -40,7 +40,7 @@ export default function Home() {
       <div className="home-container">
         <Container
           sx={{
-            marginTop: lgAndUp ? "-22rem" : smAndUp ? "-16rem" : "-8rem",
+            marginTop: lgAndUp ? "-22rem" : smAndUp ? "-12rem" : "-4rem",
           }}
           className={`home-container-content`}
           maxWidth="xl"
