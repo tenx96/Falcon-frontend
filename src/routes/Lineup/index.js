@@ -8,9 +8,11 @@ export const ROUTE_LINEUP = "/lineup"
 export default function Lineup() {
   return (
     <div className='lineup'>
-      <img className='img-fluid' src="https://source.unsplash.com/1600x900/?music,edm" alt="dummy img" />
       <div className="container-fluid px-0" style={{ overflowX: 'hidden' }}>
         <div className="row">
+          <div className="col-md-12">
+          <img className='img-fluid' src="https://source.unsplash.com/1600x600/?music,edm" alt="dummy img" />
+          </div>
           <div className="col-md-5 p-0">
             <img className='img-fluid' style={{ height: '100%', border: '2px solid white' }} width='100%' src="https://source.unsplash.com/400x300/?music,edm" alt="falcon" />
           </div>
