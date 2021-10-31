@@ -8,11 +8,11 @@ function Events() {
                 <h1 className="h1 text-center" id="pageHeaderTitle">Upcoming Events</h1>
 
                 <article className="postcard dark blue">
-                    <a className="postcard__img_link" href="#">
-                        <img className="postcard__img" src="https://picsum.photos/1000/1000" alt="Image Title" />
-                    </a>
+                    <span className="postcard__img_link" >
+                        <img className="postcard__img" src="https://picsum.photos/1000/1000" alt="event pic" />
+                    </span>
                     <div className="postcard__text">
-                        <h1 className="postcard__title blue"><a href="#">Event Title</a></h1>
+                        <h1 className="postcard__title blue">Event Title</h1>
                         <div className="postcard__subtitle small">
                             <time dateTime="2020-05-25 12:00:00">
                                 <i className="fas fa-calendar-alt me-2"></i>Mon, Nov 22nd 2021
@@ -26,11 +26,11 @@ function Events() {
                     </div>
                 </article>
                 <article className="postcard dark red">
-                    <a className="postcard__img_link" href="#">
-                        <img className="postcard__img" src="https://picsum.photos/501/500" alt="Image Title" />
-                    </a>
+                    <span className="postcard__img_link" >
+                        <img className="postcard__img" src="https://picsum.photos/501/500" alt="event pic" />
+                    </span>
                     <div className="postcard__text">
-                        <h1 className="postcard__title red"><a href="#">Event Title</a></h1>
+                        <h1 className="postcard__title red">Event Title</h1>
                         <div className="postcard__subtitle small">
                             <time dateTime="2020-05-25 12:00:00">
                                 <i className="fas fa-calendar-alt me-2"></i>Mon, Nov 22nd 2021
@@ -44,11 +44,11 @@ function Events() {
                     </div>
                 </article>
                 <article className="postcard dark green">
-                    <a className="postcard__img_link" href="#">
-                        <img className="postcard__img" src="https://picsum.photos/500/501" alt="Image Title" />
-                    </a>
+                    <span className="postcard__img_link" >
+                        <img className="postcard__img" src="https://picsum.photos/500/501" alt="event pic" />
+                    </span>
                     <div className="postcard__text">
-                        <h1 className="postcard__title green"><a href="#">Event Title</a></h1>
+                        <h1 className="postcard__title green">Event Title</h1>
                         <div className="postcard__subtitle small">
                             <time dateTime="2020-05-25 12:00:00">
                                 <i className="fas fa-calendar-alt me-2"></i>Mon, Nov 22nd 2021
@@ -62,11 +62,11 @@ function Events() {
                     </div>
                 </article>
                 <article className="postcard dark yellow">
-                    <a className="postcard__img_link" href="#">
-                        <img className="postcard__img" src="https://picsum.photos/501/501" alt="Image Title" />
-                    </a>
+                    <span className="postcard__img_link" >
+                        <img className="postcard__img" src="https://picsum.photos/501/501" alt="event pic" />
+                    </span>
                     <div className="postcard__text">
-                        <h1 className="postcard__title yellow"><a href="#">Event Title</a></h1>
+                        <h1 className="postcard__title yellow">Event Title</h1>
                         <div className="postcard__subtitle small">
                             <time dateTime="2020-05-25 12:00:00">
                                 <i className="fas fa-calendar-alt me-2"></i>Mon, Nov 22nd 2021
