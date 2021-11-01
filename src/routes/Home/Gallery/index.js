@@ -7,6 +7,7 @@ import {
   useTheme,
   useMediaQuery,
 } from "@mui/material";
+import ResponsiveEmbed from 'react-responsive-embed'
 import * as React from "react";
 import "./style.css";
 
@@ -30,8 +31,11 @@ export default function GalleryImages(title = "Shots from last year", images) {
       </Typography>
 
       <Box my={4}>
+        <div className="sm-embed">
+          <ResponsiveEmbed src='https://www.youtube.com/embed/m-DBuO7Uf6w' allowfullscreen />
+        </div>
         <iframe
-            className="embed-video"
+          className="embed-video bg-embed"
           width="560"
           height="315"
           src="https://www.youtube.com/embed/m-DBuO7Uf6w"
