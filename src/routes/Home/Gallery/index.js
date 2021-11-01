@@ -31,19 +31,9 @@ export default function GalleryImages(title = "Shots from last year", images) {
       </Typography>
 
       <Box my={4}>
-        <div className="sm-embed">
+        <Box width={isMdAndDown ? "100%" : "60%"} mx="auto">
           <ResponsiveEmbed src='https://www.youtube.com/embed/m-DBuO7Uf6w' allowfullscreen />
-        </div>
-        <iframe
-          className="embed-video bg-embed"
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/m-DBuO7Uf6w"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
+        </Box>
       </Box>
 
       <Box mt={4}>
