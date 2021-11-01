@@ -31,7 +31,7 @@ function Artists() {
                             </div>
                             <div className="card-content">
                                 <Typography variant="h5">{artist.name}</Typography>
-                                <Typography variant="subtitle2" component='p' gutterBottom>{artist.desc}</Typography>
+                                <Typography variant="subtitle2 m-0" component='p' gutterBottom>{artist.desc}</Typography>
                             </div>
                         </div>
                     </div>
