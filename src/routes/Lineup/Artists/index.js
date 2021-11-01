@@ -1,4 +1,5 @@
 import React from 'react'
+import { Typography } from "@mui/material";
 import './style.css'
 
 function Artists() {
@@ -24,13 +25,13 @@ function Artists() {
             <div className="row p-5">
                 {Artistlist.map((artist, index) => (
                     <div className="col-md-4" key={index}>
-                        <div class="card">
-                            <div class="cover">
+                        <div className="card">
+                            <div className="cover">
                                 <img src={artist.image} alt="cover" />
                             </div>
-                            <div class="card-content">
-                                <h4>{artist.name}</h4>
-                                <p>{artist.desc}</p>
+                            <div className="card-content">
+                                <Typography variant="h5">{artist.name}</Typography>
+                                <Typography variant="subtitle2" component='p' gutterBottom>{artist.desc}</Typography>
                             </div>
                         </div>
                     </div>
