@@ -74,7 +74,7 @@ export default function Lineup() {
 
 
   return (
-    <div className="lineup">
+    <div className="lineup" style={{backgroundColor:'#121212'}}>
       <Grid container spacing={4}>
         {artistList.map((item, i) => (
           <Grid item md={4} xs={12}>
@@ -83,7 +83,7 @@ export default function Lineup() {
         ))}
       </Grid>
       <section className="dark">
-        <div className="container pt-5">
+        <div className="container pt-5 pb-3">
           {Eventslist.map((item, i) => (
             <Event key={i} color={getEventColor(i)} event={item} />
           ))}
