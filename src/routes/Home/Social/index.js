@@ -1,4 +1,4 @@
-import { Typography, Box, Icon, useTheme, useMediaQuery, Grid, Container } from "@mui/material";
+import { Typography, Box, Icon, useTheme, useMediaQuery } from "@mui/material";
 import React from "react";
 import "./style.css";
 

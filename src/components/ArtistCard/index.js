@@ -7,7 +7,7 @@ function ArtistCard({ title, description, image }) {
       container
     >
       <Grid item xs={12} sm={6}>
-        <img src={image} alt="some band image" className="artist-img" />
+        <img src={image} alt="some band pic" className="artist-img" />
       </Grid>
 
       <Grid item xs={12} sm={6}>

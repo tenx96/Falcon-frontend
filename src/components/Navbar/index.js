@@ -8,13 +8,13 @@ import "./Navbar.css";
 function Navbar({ title, routes }) {
   const history = useHistory();
 //   bool to check if current route is at home
-    const [isHome, setIsHome] = useState(history.location.pathname == ROUTE_HOME);
-    const [isLineup, setLineup] = useState(history.location.pathname == ROUTE_LINEUP);
+    const [isHome, setIsHome] = useState(history.location.pathname === ROUTE_HOME);
+    const [isLineup, setLineup] = useState(history.location.pathname === ROUTE_LINEUP);
 
     // make color changes based on location
     history.listen((location , action) => {
-        setIsHome(location.pathname == ROUTE_HOME)
-        setLineup(location.pathname == ROUTE_LINEUP)
+        setIsHome(location.pathname === ROUTE_HOME)
+        setLineup(location.pathname === ROUTE_LINEUP)
     })
 
 
@@ -23,7 +23,7 @@ function Navbar({ title, routes }) {
       <div className="container-fluid px-0" style={{ overflowX: "hidden" }}>
         <a style={{
             color : isHome || isLineup ? "white" : "black"
-        }} className="navbar-brand">
+        }} className="navbar-brand" href="/">
           {title}
         </a>
         <button

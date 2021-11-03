@@ -15,7 +15,6 @@ import React from "react";
 import GalleryImages from "./Gallery";
 import "./home.css";
 import NavigationCards from "./NavigationCards";
-import PosterCard from "./PosterCard";
 import Schedule from "./Schedule";
 import Sponsors from "./Sponsors";
 import TicketCard from "./TicketCard";
@@ -77,10 +76,9 @@ export default function Home() {
                   />
                 </Grid>
               </Grid>
-              <Grid mt={8} item mx={3} item xs={12} sm={10} md={8}>
+              <Grid mt={8} item xs={12} sm={10} md={10} className="px-0">
                 <Schedule></Schedule>
               </Grid>
-
               <Grid mt={8} item container md={12} xs={12}>
                 <Grid mb={6} xs={12}>
                   <Typography
