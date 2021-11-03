@@ -21,7 +21,7 @@ const sponsorsList = [
 function Sponsors() {
   return (
     <div>
-      <Grid container mt={10} >
+      <Grid container sx={{display:'flex',justifyContent:'center'}} mt={10} >
         <Grid item xs={12}>
           <Typography
             textAlign="center"

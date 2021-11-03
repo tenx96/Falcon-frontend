@@ -6,6 +6,9 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
+import TourOutlinedIcon from '@mui/icons-material/TourOutlined';
+import FastfoodIcon from '@mui/icons-material/Fastfood';
+import HotelIcon from '@mui/icons-material/Hotel';
 import ArtistCard from "components/ArtistCard";
 import BannerImage from "components/Banner";
 import React from "react";
@@ -130,6 +133,7 @@ export default function Home() {
                     image="https://landtravelblog.files.wordpress.com/2013/08/p1080649.jpg?w=280&h=280&crop=1"
                     title="Tourism"
                     subTitle="Dolor duis irure sunt non culpa velit labore consectetur fugiat reprehenderit laborum voluptate."
+                    icon={<TourOutlinedIcon/>}
                   />
                 </Grid>
                 <Grid item xs={12} md={4}>
@@ -137,6 +141,7 @@ export default function Home() {
                     image="https://assets.bwbx.io/images/users/iqjWHBFdfxIU/izeD0hHEwWUc/v0/1000x-1.jpg"
                     title="Hotels"
                     subTitle="Sunt quis in do eiusmod eu officia occaecat nisi aute amet consectetur do."
+                    icon={<HotelIcon/>}
                   />
                 </Grid>
                 <Grid item xs={12} md={4}>
@@ -144,6 +149,7 @@ export default function Home() {
                     image="https://media.self.com/photos/5f189b76c58e27c99fbef9e3/1:1/w_768,c_limit/blackberry-vanilla-french-toast.jpg"
                     title="Food"
                     subTitle="Nisi ipsum sint nulla occaecat non commodo nostrud aliquip esse consequat cillum minim elit eu."
+                    icon={<FastfoodIcon/>}
                   />
                 </Grid>
               </Grid>
@@ -159,7 +165,7 @@ export default function Home() {
               </Grid>
 
               <Grid item xs={12}>
-                <Sponsors />
+                <Sponsors sx={{display:'flex',justifyContent:'center'}} />
               </Grid>
             </Grid>
           </Paper>
