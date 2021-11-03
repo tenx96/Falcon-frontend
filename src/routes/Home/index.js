@@ -23,6 +23,9 @@ import poster1 from "assets/poster-1.jpg";
 import poster2 from "assets/poster-2.jpg";
 import poster3 from "assets/poster-3.jpg";
 import poster4 from "assets/poster-4.jpg";
+import Hotel from "assets/hotel.svg";
+import Tourism from "assets/tourism.svg";
+import Food from "assets/food.svg";
 import PosterSlider from "./PosterCard";
 import SocialSection from "./Social";
 import AboutFalcon from "./About";
@@ -128,7 +131,7 @@ export default function Home() {
 
                 <Grid item xs={12} md={4}>
                   <NavigationCards
-                    image="https://landtravelblog.files.wordpress.com/2013/08/p1080649.jpg?w=280&h=280&crop=1"
+                    image={Tourism}
                     title="Tourism"
                     subTitle="Dolor duis irure sunt non culpa velit labore consectetur fugiat reprehenderit laborum voluptate."
                     icon={<TourOutlinedIcon/>}
@@ -136,7 +139,7 @@ export default function Home() {
                 </Grid>
                 <Grid item xs={12} md={4}>
                   <NavigationCards
-                    image="https://assets.bwbx.io/images/users/iqjWHBFdfxIU/izeD0hHEwWUc/v0/1000x-1.jpg"
+                    image={Hotel}
                     title="Hotels"
                     subTitle="Sunt quis in do eiusmod eu officia occaecat nisi aute amet consectetur do."
                     icon={<HotelIcon/>}
@@ -144,9 +147,9 @@ export default function Home() {
                 </Grid>
                 <Grid item xs={12} md={4}>
                   <NavigationCards
-                    image="https://media.self.com/photos/5f189b76c58e27c99fbef9e3/1:1/w_768,c_limit/blackberry-vanilla-french-toast.jpg"
+                    image={Food}
                     title="Food"
-                    subTitle="Nisi ipsum sint nulla occaecat non commodo nostrud aliquip esse consequat cillum minim elit eu."
+                    subTitle="Nisi ipsum sint nulla occaecat non suku blyat commodo nostrud aliquip esse consequat cillum minim elit eu."
                     icon={<FastfoodIcon/>}
                   />
                 </Grid>
