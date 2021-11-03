@@ -1,0 +1,17 @@
+.social{
+    justify-content: start;
+}
+.social .col-md-12{
+    justify-content: start !important;
+}
+@media screen and (max-width:768px) {
+    .social{
+        justify-content: center;
+    }
+    .social .col-md-6{
+        justify-content: center !important;
+    }
+    .social .col-md-12{
+        justify-content: center !important;
+    }
+}
