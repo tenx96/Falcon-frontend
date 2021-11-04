@@ -60,7 +60,7 @@ export default function Home() {
               alignItems="center"
               justifyContent="center"
             >
-              <Grid item xs={12} md={7}>
+              {/* <Grid item xs={12} md={7}>
                 <ArtistCard
                   title={"The local train"}
                   description={
@@ -78,7 +78,21 @@ export default function Home() {
                     image="https://images.newindianexpress.com/uploads/user/imagelibrary/2021/4/21/w900X450/logo-on-gray.jpg?w=400&dpr=2.6"
                   />
                 </Grid>
-              </Grid>
+              </Grid> */}
+              <Paper className='home-top-card'
+                elevation={4}
+                sx={{ bgcolor: "#FAFAFA", width: "100%" }}
+              >
+                <ArtistCard
+                  title={"The local train"}
+                  description={
+                    "Sint esse ullamco eu non laborum veniam. Sint do adipisicing deserunt ad duis in ut sint incididunt. Dolore nulla sunt tempor cupidatat incididunt excepteur cupidatat sit non reprehenderit minim adipisicing cillum adipisicing. Culpa ad excepteur sit velit."
+                  }
+                  image={
+                    "https://cdn.shopify.com/s/files/1/2381/0737/files/tlt4_large.jpg?v=1529751537"
+                  }
+                />
+              </Paper>
               <Grid mt={8} item xs={12} sm={10} md={10} className="px-0">
                 <Schedule></Schedule>
               </Grid>
@@ -134,7 +148,7 @@ export default function Home() {
                     image={Tourism}
                     title="Tourism"
                     subTitle="Dolor duis irure sunt non culpa velit labore consectetur fugiat reprehenderit laborum voluptate."
-                    icon={<TourOutlinedIcon/>}
+                    icon={<TourOutlinedIcon />}
                   />
                 </Grid>
                 <Grid item xs={12} md={4}>
@@ -142,7 +156,7 @@ export default function Home() {
                     image={Hotel}
                     title="Hotels"
                     subTitle="Sunt quis in do eiusmod eu officia occaecat nisi aute amet consectetur do."
-                    icon={<HotelIcon/>}
+                    icon={<HotelIcon />}
                   />
                 </Grid>
                 <Grid item xs={12} md={4}>
@@ -150,7 +164,7 @@ export default function Home() {
                     image={Food}
                     title="Food"
                     subTitle="Nisi ipsum sint nulla occaecat non suku blyat commodo nostrud aliquip esse consequat cillum minim elit eu."
-                    icon={<FastfoodIcon/>}
+                    icon={<FastfoodIcon />}
                   />
                 </Grid>
               </Grid>
@@ -162,11 +176,11 @@ export default function Home() {
               </Grid>
 
               <Grid mt={10} item xs={12} md={6} lg={8}>
-                <AboutFalcon title="About Falcon Festival" description="Cupidatat duis Lorem dolor ullamco ipsum nostrud velit enim esse tempor anim sunt. Aliqua dolore velit pariatur velit deserunt consectetur. Veniam culpa nostrud ipsum elit duis culpa veniam culpa proident. Fugiat esse enim est consequat laborum ex consequat id. Sunt cupidatat tempor ex cupidatat magna sunt veniam nisi elit consectetur "/>
+                <AboutFalcon title="About Falcon Festival" description="Cupidatat duis Lorem dolor ullamco ipsum nostrud velit enim esse tempor anim sunt. Aliqua dolore velit pariatur velit deserunt consectetur. Veniam culpa nostrud ipsum elit duis culpa veniam culpa proident. Fugiat esse enim est consequat laborum ex consequat id. Sunt cupidatat tempor ex cupidatat magna sunt veniam nisi elit consectetur " />
               </Grid>
 
               <Grid item xs={12}>
-                <Sponsors/>
+                <Sponsors />
               </Grid>
             </Grid>
           </Paper>
