@@ -81,7 +81,7 @@ export default function Home() {
               </Grid> */}
               <Paper className='home-top-card'
                 elevation={4}
-                sx={{ bgcolor: "#FAFAFA", width: "100%" }}
+                sx={{ bgcolor: "#f8f8ff", width: "100%" }}
               >
                 <ArtistCard
                   title={"The local train"}
