@@ -5,6 +5,7 @@ import Footer from "components/Footer";
 import Navbar from "components/Navbar";
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Admin from "routes/Admin";
 import "./index.css";
 import About, { ROUTE_ABOUT } from "./routes/About";
 import Home, { ROUTE_HOME } from "./routes/Home";
@@ -52,6 +53,7 @@ export default function App() {
             {/* <ApplicationBar title="Falcon Festival" routes={routes} /> */}
             <Navbar title="Falcon Festival" routes={routes} />
             <Switch>
+              <Route exact path='/admin' component={Admin} />
               <Route path={ROUTE_ABOUT} component={About} />
               <Route path={ROUTE_LINEUP} component={Lineup} />
               <Route path={ROUTE_TOURISM} component={Tourism} />

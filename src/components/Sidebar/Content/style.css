@@ -1,0 +1,11 @@
+#content{
+    color: #212529 !important;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+  }
+.tab button.active {
+    background-color: #d2f4ea;
+}
