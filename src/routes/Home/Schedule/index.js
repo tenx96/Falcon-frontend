@@ -1,4 +1,3 @@
-import { Title } from "@mui/icons-material";
 import {
   Button,
   Grid,
@@ -51,7 +50,7 @@ function DesktopSchedule({
       </Grid>
       {slicedImages.map((image, i) => (
         <Grid key={i} item xs={threeTiles ? 3 : 2}>
-          <img className="artist-image" src={image} alt="some random image" />
+          <img className="artist-image" src={image} alt="some random pic" />
         </Grid>
       ))}
     </Grid>
@@ -60,8 +59,11 @@ function DesktopSchedule({
 
 function MobileView({ title, description, images }) {
   return (
-    <Grid spacing={1} container justifyContent="center" alignItems="center">
-      <Grid item xs={4}>
+    <Grid spacing={1} container justifyContent="center" className="mx-0" alignItems="center">
+      <Grid item xs={10}>
+        <MobileImageSlider images={images} />
+      </Grid>
+      <Grid item xs={10}>
         <Typography
           sx={{
             mb: 3,
@@ -81,15 +83,11 @@ function MobileView({ title, description, images }) {
           {description}
         </ExpandableTypography>
       </Grid>
-
-      <Grid item xs={8}>
-        <MobileImageSlider images={images} />
-      </Grid>
     </Grid>
   );
 }
 
-export default function Schedule({}) {
+export default function Schedule() {
   const [tab, setTab] = React.useState(0);
 
   const theme = useTheme();
@@ -99,21 +97,21 @@ export default function Schedule({}) {
     <div>
       <Grid container justifyContent="center" alignItems="center">
         <Grid item xs={12} marginTop="24px">
-          {tab == 0 && mdAndUp && (
+          {tab === 0 && mdAndUp && (
             <DesktopSchedule {...parseData(mockData.day1)} />
           )}
-          {tab == 0 && !mdAndUp && <MobileView {...parseData(mockData.day1)} />}
-          {tab == 1 && mdAndUp && (
+          {tab === 0 && !mdAndUp && <MobileView {...parseData(mockData.day1)} />}
+          {tab === 1 && mdAndUp && (
             <DesktopSchedule {...parseData(mockData.day2)} />
           )}
-          {tab == 1 && !mdAndUp && <MobileView {...parseData(mockData.day2)} />}
+          {tab === 1 && !mdAndUp && <MobileView {...parseData(mockData.day2)} />}
         </Grid>
         <Grid
           item
           xs={12}
           container
           marginTop="24px"
-          justifyContent="flex-end"
+          justifyContent={mdAndUp ? "flex-end" : "center"}
           alignItems="center"
         >
           <Button

@@ -43,7 +43,7 @@ function PosterSlider({ images }) {
               <Box
                 component="img"
                 sx={{
-                  height: mdAndDown ? 600: 700,  
+                  height: mdAndDown ? 400: 500,  
                   display: "block",
                   overflow: "hidden",
                 }}

@@ -1,4 +1,5 @@
 import { Container, Grid, Typography, Button, Box } from "@mui/material";
+import ConfirmationNumberOutlinedIcon from '@mui/icons-material/ConfirmationNumberOutlined';
 import React from "react";
 import "./ArtistCard.css";
 function ArtistCard({ title, description, image }) {
@@ -7,7 +8,7 @@ function ArtistCard({ title, description, image }) {
       container
     >
       <Grid item xs={12} sm={6}>
-        <img src={image} alt="some band image" className="artist-img" />
+        <img src={image} alt="some band pic" className="artist-img" />
       </Grid>
 
       <Grid item xs={12} sm={6}>
@@ -32,18 +33,33 @@ function ArtistCard({ title, description, image }) {
           </Typography>
           <Box
             sx={{
-              mt: 4,
+              mt: 4,mb:3
             }}
           >
             <Grid container justifyContent="center" alignItems="center">
             <Button
               sx={{
                 borderRadius: 100,
+                mx:1,
+                mt:1
+              }}
+              variant="outlined"
+              color="primary"
+            >
+              View Lineup
+            </Button>
+            <Button
+
+              startIcon={<ConfirmationNumberOutlinedIcon/>}
+              sx={{
+                borderRadius: 100,
+                mx:1,
+                mt:1
               }}
               variant="contained"
               color="primary"
             >
-              View Lineup
+              Book your tickets
             </Button>
             </Grid>
           </Box>

@@ -1,4 +1,4 @@
-import { Container, Grid, Typography, Button, Box } from "@mui/material";
+import { Container, Grid, Typography, Box } from "@mui/material";
 import ExpandableTypography from "components/ExpandableTypography";
 import React from "react";
 import "./style.css";
@@ -6,7 +6,7 @@ function VipCard({ title, description, image }) {
   return (
     <Grid container>
       <Grid item xs={12} sm={6}>
-        <img src={image} alt="some band image" className="artist-img" />
+        <img src={image} alt="some-band-img" className="artist-img" />
       </Grid>
 
       <Grid item xs={12} sm={6}>

@@ -27,3 +27,20 @@
 .margin-x-auto {
     margin: auto;
 }
+
+/* //////////////// */
+
+.home-top-card{
+    margin: 3rem 0;
+    margin-right: 5rem;
+    margin-left: calc(5rem + 16px);
+
+}
+
+@media screen and (max-width:768px) {
+    .home-top-card{
+        margin:0;
+        margin-left: 16px;
+    }
+    
+}

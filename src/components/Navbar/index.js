@@ -2,16 +2,19 @@ import { Button, Icon } from "@mui/material";
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { ROUTE_HOME } from "routes/Home";
+import { ROUTE_LINEUP } from "routes/Lineup";
 import "./Navbar.css";
 
 function Navbar({ title, routes }) {
   const history = useHistory();
 //   bool to check if current route is at home
-    const [isHome, setIsHome] = useState(history.location.pathname == ROUTE_HOME);
+    const [isHome, setIsHome] = useState(history.location.pathname === ROUTE_HOME);
+    const [isLineup, setLineup] = useState(history.location.pathname === ROUTE_LINEUP);
 
     // make color changes based on location
     history.listen((location , action) => {
-        setIsHome(location.pathname == ROUTE_HOME)
+        setIsHome(location.pathname === ROUTE_HOME)
+        setLineup(location.pathname === ROUTE_LINEUP)
     })
 
 
@@ -19,8 +22,8 @@ function Navbar({ title, routes }) {
     <nav className="navbar navbar-expand-lg navbar-fixed-top navbar-dark">
       <div className="container-fluid px-0" style={{ overflowX: "hidden" }}>
         <a style={{
-            color : isHome ? "white" : "black"
-        }} className="navbar-brand">
+            color : isHome || isLineup ? "white" : "black"
+        }} className="navbar-brand" href="/">
           {title}
         </a>
         <button
@@ -44,7 +47,7 @@ function Navbar({ title, routes }) {
                   history.push(item.route);
                 }}
                 sx={{
-                  color: isHome ? "white" : "black",
+                  color: isHome || isLineup ? "white" : "black",
                 }}
               >
                 {item.label}

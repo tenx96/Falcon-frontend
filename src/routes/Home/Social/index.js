@@ -35,30 +35,25 @@ function SocialSection() {
         </Typography>
       </Box>
 
-      <Box display={mdAndDown && "flex"} justifyContent="center">
-        {socialIcons.map((item, i) => (
-          <Box
-            display="flex"
-            justifyContent="start"
-            alignItems="center"
-            key={i}
-            mr={(mdAndDown &&  i <socialIcons.length-1) && 3}
-          >
+      <div className="container-fluid px-0">
+        <div className="row d-flex align-items-center social">
+          {socialIcons.map((item, i) => (
+            <div className="col-md-12 col-6 d-flex justify-content-center align-items-center" key={i}>
             <Icon
-              
-              sx={{
-                mr: mdAndDown ? 1 : 3,
-                color: item.color
-              }}
+            sx={{
+              mr: mdAndDown ? 1 : 3,
+              color: item.color
+            }}
               className={item.icon}
             ></Icon>
 
             <Typography variant="overline" fontWeight="bold">
               {item.label}
             </Typography>
-          </Box>
-        ))}
-      </Box>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
