@@ -1,30 +1,60 @@
-import { Button, Typography, Box, Collapse, Card, Slide } from "@mui/material";
+import {
+  Button,
+  Typography,
+  Box,
+  Collapse,
+  Card,
+  Slide,
+  Container,
+  CardActions,
+  CardMedia,
+  CardContent,
+  IconButton,
+  Icon,
+  CardActionArea,
+} from "@mui/material";
+import useColor from "customHooks/useColor";
 import React, { useState } from "react";
 import "./style.css";
 
 function NavigationCards({ title, image, subTitle }) {
+  const colors = useColor();
+
   return (
-    <div
-      style={{
-        backgroundImage: `linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6) ) ,url('${image}')`,
-      }}
+    <Container
       className="nav-card-container"
+      sx={{
+        padding: "40px",
+        bgcolor: colors.background.paper,
+        "&:hover": {
+          bgcolor: colors.background.main,
+        },
+      }}
+      maxWidth="xs"
     >
-      <div>
-        <Box my={3} display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-          
-        <Typography  maxWidth="80%" sx={{
-              my : 2
-          }} color="whitesmoke" align="center" variant="body2" component="p">
-            {subTitle}
-          </Typography>
-          <Button sx={{
-              borderRadius : "100px"
-          }} variant="contained">{title}</Button>
-         
-        </Box>
-      </div>
-    </div>
+      <Card
+        sx={{
+          bgcolor: colors.background.main,
+        }}
+      >
+        <CardActionArea>
+          <CardMedia
+            component="img"
+            height="140"
+            image={image}
+            alt="nav-image"
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              {title}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              {subTitle}
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+      </Card>
+    </Container>
   );
 }
 

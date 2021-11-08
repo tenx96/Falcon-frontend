@@ -162,7 +162,7 @@ export default function Home() {
 
                 <Grid item xs={12} md={4}>
                   <NavigationCards
-                    image="http://placekitten.com/300/500"
+                    image="https://static.toiimg.com/thumb/msid-80786117,width-748,height-499,resizemode=4,imgsize-272533/.jpg"
                     title="Tourism"
                     subTitle="Dolor duis irure sunt non culpa velit labore consectetur fugiat reprehenderit laborum voluptate."
                     icon={<TourOutlinedIcon />}
@@ -170,7 +170,7 @@ export default function Home() {
                 </Grid>
                 <Grid item xs={12} md={4}>
                   <NavigationCards
-                    image="http://placekitten.com/300/502"
+                    image="https://i.insider.com/5c758cae598e230496135876?width=1136&format=jpeg"
                     title="Hotels"
                     subTitle="Sunt quis in do eiusmod eu officia occaecat nisi aute amet consectetur do."
                     icon={<HotelIcon />}
@@ -178,7 +178,7 @@ export default function Home() {
                 </Grid>
                 <Grid item xs={12} md={4}>
                   <NavigationCards
-                    image="http://placekitten.com/300/501"
+                    image="https://img.freepik.com/free-photo/delicious-vietnamese-food-including-pho-ga-noodles-spring-rolls-white-table_181624-34062.jpg?size=626&ext=jpg"
                     title="Food"
                     subTitle="Nisi ipsum sint nulla occaecat non suku blyat commodo nostrud aliquip esse consequat cillum minim elit eu."
                   />
