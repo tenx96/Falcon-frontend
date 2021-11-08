@@ -10,7 +10,7 @@ import About, { ROUTE_ABOUT } from "./routes/About";
 import Home, { ROUTE_HOME } from "./routes/Home";
 import Lineup, { ROUTE_LINEUP } from "./routes/Lineup";
 import Tourism, { ROUTE_TOURISM } from "./routes/Tourism";
-
+import { CssBaseline } from "@mui/material";
 export const ApplicationContext = React.createContext();
 
 export default function App() {
@@ -34,33 +34,43 @@ export default function App() {
   ];
 
   const theme = createTheme({
+    
     palette: {
+      mode: "dark",
       primary: {
         main: purple[500],
       },
       secondary: {
         main: green[500],
       },
+      background : {
+        main : "#121212",
+        paper : "#181818",
+        hover : "#282828"
+      }
     },
   });
 
   return (
     <React.StrictMode>
-      <ThemeProvider theme={theme}>
+      
         <Router>
           <div>
             {/* <ApplicationBar title="Falcon Festival" routes={routes} /> */}
             <Navbar title="Falcon Festival" routes={routes} />
+            <ThemeProvider theme={theme}>
+              <CssBaseline/>
             <Switch>
               <Route path={ROUTE_ABOUT} component={About} />
               <Route path={ROUTE_LINEUP} component={Lineup} />
               <Route path={ROUTE_TOURISM} component={Tourism} />
               <Route path={ROUTE_HOME} component={Home} />
             </Switch>
+            </ThemeProvider>
             <Footer></Footer>
           </div>
         </Router>
-      </ThemeProvider>
+      
     </React.StrictMode>
   );
 }
