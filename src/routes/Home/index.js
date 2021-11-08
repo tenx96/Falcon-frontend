@@ -31,8 +31,31 @@ import Food from "assets/food.svg";
 import PosterSlider from "./PosterCard";
 import SocialSection from "./Social";
 import AboutFalcon from "./About";
-import useColors from "customHooks/useColor"
-const posters = [poster1, poster2, poster3, poster4];
+import useColors from "customHooks/useColor";
+const posters = [
+  {
+    image: poster1,
+    title: "The local train 1",
+    subTitle: "Artist",
+    description: "Elit ut est cillum laborum pariatur ipsum ad reprehenderit.",
+  },
+  {
+    image: poster2,
+    title: "The local train 2",
+    subTitle: "Artist",
+    description: "Elit ut est cillum laborum pariatur ipsum ad reprehenderit.",
+  },{
+    image: poster3,
+    title: "The local train 3",
+    subTitle: "Artist",
+    description: "Elit ut est cillum laborum pariatur ipsum ad reprehenderit.",
+  },{
+    image: poster4,
+    title: "The local train 4",
+    subTitle: "Artist",
+    description: "Elit ut est cillum laborum pariatur ipsum ad reprehenderit.",
+  },
+];
 
 export const ROUTE_HOME = "/";
 
@@ -40,7 +63,7 @@ export default function Home() {
   const theme = useTheme();
   const smAndUp = useMediaQuery(theme.breakpoints.up("md"));
   const lgAndUp = useMediaQuery(theme.breakpoints.up("lg"));
-  const colors = useColors()
+  const colors = useColors();
   return (
     <Box
       height="100%"
@@ -58,7 +81,11 @@ export default function Home() {
           className={`home-container-content`}
           maxWidth="xl"
         >
-          <Box elevation={4} bgcolor={colors.background.main} sx={{ height: "100%", pb: 5 }}>
+          <Box
+            elevation={4}
+            bgcolor={colors.background.main}
+            sx={{ height: "100%", pb: 5 }}
+          >
             <Grid
               container
               spacing={2}
@@ -82,10 +109,10 @@ export default function Home() {
               <Grid item xs={12}>
                 <Box display="flex" justifyContent="center">
                   <Button
-                  size="large"
+                    size="large"
                     sx={{
                       borderRadius: "100px",
-                      mr : 2
+                      mr: 2,
                     }}
                     variant="contained"
                   >
@@ -96,12 +123,11 @@ export default function Home() {
                     size="large"
                     sx={{
                       borderRadius: "100px",
-                      color : colors.accent.main,
-                      borderColor : colors.accent.main,
-                      "&:hover" : {
-                        borderColor : colors.accent.main.secondary
-
-                      }
+                      color: colors.accent.main,
+                      borderColor: colors.accent.main,
+                      "&:hover": {
+                        borderColor: colors.accent.main.secondary,
+                      },
                     }}
                     variant="outlined"
                   >
@@ -124,10 +150,10 @@ export default function Home() {
                     News and Announcements
                   </Typography>
                 </Grid>
-                <Grid item xs={12} md={8}>
-                  <PosterSlider images={posters} />
+                <Grid item xs={12}>
+                  <PosterSlider data={posters} />
                 </Grid>
-                <Grid my="auto" px={3} item xs={12} md={4}>
+                <Grid my="auto" px={3} item xs={12}>
                   <SocialSection />
                 </Grid>
               </Grid>
