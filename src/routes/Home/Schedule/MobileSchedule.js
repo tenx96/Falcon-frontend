@@ -1,4 +1,4 @@
-import "./schedule.css"
+import "./style.css"
 
 import * as React from 'react';
 import { useTheme } from '@mui/material/styles';

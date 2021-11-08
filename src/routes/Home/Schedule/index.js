@@ -7,7 +7,7 @@ import {
 } from "@mui/material";
 import ExpandableTypography from "components/ExpandableTypography";
 import * as React from "react";
-import "../home.css";
+import "./style.css";
 import MobileImageSlider from "./MobileSchedule";
 
 import mockData from "./mockData.json";

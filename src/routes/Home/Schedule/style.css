@@ -1,0 +1,10 @@
+.artist-image {
+    object-fit: cover;
+    width: 100%;
+    height: 350px;
+    transition: transform .3s;
+}
+
+.artist-image:hover {
+    transform: scale(1.1);
+}
