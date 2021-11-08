@@ -3,6 +3,9 @@ export default () => {
   const isDark = mode === "dark";
 
   return {
+    text : {
+        main : isDark ? "#FFFFFF" : "#121212"
+    },
     accent: {
       main: isDark ? "#f50057" : "#ff9100",
       secondary: isDark ? "#ab003c" : "#ff9100",

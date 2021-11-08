@@ -73,10 +73,7 @@ function PosterSlider({ data }) {
         {data.map((item, i) => (
           <EventAccordian
             key={i}
-            image={item.image}
-            title={item.title}
-            subtitle={item.subTitle}
-            description={item.description}
+            {...item}
             expanded={expanded && activeStep === i}
             handleChange={(e, exp) => handleAccordianExpand(exp, i)}
           />

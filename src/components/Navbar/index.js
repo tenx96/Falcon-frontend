@@ -22,7 +22,7 @@ function Navbar({ title, routes }) {
     <nav className="navbar navbar-expand-lg navbar-fixed-top navbar-dark">
       <div className="container-fluid px-0" style={{ overflowX: "hidden" }}>
         <a style={{
-            color : isHome || isLineup ? "white" : "black"
+            color : "white"
         }} className="navbar-brand" href="/">
           {title}
         </a>
@@ -47,7 +47,7 @@ function Navbar({ title, routes }) {
                   history.push(item.route);
                 }}
                 sx={{
-                  color: isHome || isLineup ? "white" : "black",
+                  color: "white"
                 }}
               >
                 {item.label}

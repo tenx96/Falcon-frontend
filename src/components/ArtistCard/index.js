@@ -2,7 +2,7 @@ import { Container, Grid, Typography, Button, Box } from "@mui/material";
 import ConfirmationNumberOutlinedIcon from "@mui/icons-material/ConfirmationNumberOutlined";
 import React from "react";
 import "./ArtistCard.css";
-function ArtistCard({ title, description, image }) {
+function ArtistCard({ title, subtitle, image }) {
   return (
     <Container maxWidth="sm" sx={{
       bgcolor : theme => theme.palette.background.paper,
@@ -35,7 +35,7 @@ function ArtistCard({ title, description, image }) {
           gutterBottom
           component="p"
         >
-          {"Artist"}
+          {subtitle}
         </Typography>
 
       </div>

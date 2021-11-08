@@ -32,30 +32,9 @@ import PosterSlider from "./PosterCard";
 import SocialSection from "./Social";
 import AboutFalcon from "./About";
 import useColors from "customHooks/useColor";
-const posters = [
-  {
-    image: poster1,
-    title: "The local train 1",
-    subTitle: "Artist",
-    description: "Elit ut est cillum laborum pariatur ipsum ad reprehenderit.",
-  },
-  {
-    image: poster2,
-    title: "The local train 2",
-    subTitle: "Artist",
-    description: "Elit ut est cillum laborum pariatur ipsum ad reprehenderit.",
-  },{
-    image: poster3,
-    title: "The local train 3",
-    subTitle: "Artist",
-    description: "Elit ut est cillum laborum pariatur ipsum ad reprehenderit.",
-  },{
-    image: poster4,
-    title: "The local train 4",
-    subTitle: "Artist",
-    description: "Elit ut est cillum laborum pariatur ipsum ad reprehenderit.",
-  },
-];
+
+import { artistList } from "data/artists";
+import { announcementsList } from "data/announcements";
 
 export const ROUTE_HOME = "/";
 
@@ -92,16 +71,12 @@ export default function Home() {
               alignItems="center"
               justifyContent="center"
             >
-              {[1, 2, 3].map((item) => (
-                <Grid mb={3} item xs={12} sm={6}>
+              {artistList.map((item, i) => (
+                <Grid key={i} mb={3} item xs={12} sm={6}>
                   <ArtistCard
-                    title={"The local train"}
-                    description={
-                      "Sint esse ullamco eu non laborum veniam. Sint do adipisicing deserunt ad duis in ut sint incididunt. Dolore nulla sunt tempor cupidatat incididunt excepteur cupidatat sit non reprehenderit minim adipisicing cillum adipisicing. Culpa ad excepteur sit velit."
-                    }
-                    image={
-                      "https://cdn.shopify.com/s/files/1/2381/0737/files/tlt4_large.jpg?v=1529751537"
-                    }
+                    title={item.title}
+                    subtitle={item.subtitle}
+                    image={item.image}
                   />
                 </Grid>
               ))}
@@ -151,7 +126,7 @@ export default function Home() {
                   </Typography>
                 </Grid>
                 <Grid item xs={12}>
-                  <PosterSlider data={posters} />
+                  <PosterSlider data={announcementsList} />
                 </Grid>
                 <Grid my="auto" px={3} item xs={12}>
                   <SocialSection />

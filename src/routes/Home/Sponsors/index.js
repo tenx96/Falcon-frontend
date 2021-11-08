@@ -3,18 +3,16 @@ import React from "react";
 import SponsorCard from "./SponsorCard";
 import "./sponsors.css";
 
+import sponsor1 from "assets/sponsors/sponsor-1.jpg"
+import sponsor2 from "assets/sponsors/sponsor-2.png"
+import sponsor3 from "assets/sponsors/sponsor-3.jpeg"
+
 
 
 const sponsorsList = [
-    "https://www.pngitem.com/pimgs/m/249-2491766_sports-brand-logo-png-transparent-png.png",
-    "https://www.nicepng.com/png/detail/28-283120_logos-of-different-brands.png",
-    "https://www.freepnglogos.com/uploads/new-balance-png-logo/womens-stylish-shoes-new-balance-png-logo-1.png",
-    "https://www.nicepng.com/png/detail/28-283120_logos-of-different-brands.png",
-    "https://www.freepnglogos.com/uploads/new-balance-png-logo/womens-stylish-shoes-new-balance-png-logo-1.png",
-    "https://www.pinclipart.com/picdir/middle/106-1066002_sports-brands-logos-png-www-pixshark-com-images.png",
-    "https://www.pngitem.com/pimgs/m/249-2491766_sports-brand-logo-png-transparent-png.png",
-    "https://www.pinclipart.com/picdir/middle/106-1066002_sports-brands-logos-png-www-pixshark-com-images.png",
-    "https://www.freepnglogos.com/uploads/new-balance-png-logo/womens-stylish-shoes-new-balance-png-logo-1.png",
+      sponsor1,
+      sponsor2,
+      sponsor3
 ]
 
 

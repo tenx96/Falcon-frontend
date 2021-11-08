@@ -17,7 +17,7 @@ function EventAccordian({
   title,
   subtitle,
   description,
-  links = [{ label: "Register", link: "#" }],
+  links,
 }) {
   return (
     <Accordion expanded={expanded} onChange={handleChange}>
