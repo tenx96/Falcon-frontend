@@ -5,30 +5,11 @@ import {
   useTheme,
   useMediaQuery,
   IconButton,
+  Button,
 } from "@mui/material";
 import React from "react";
 import "./style.css";
-
-const socialIcons = [
-  {
-    icon: "fab fa-facebook",
-    label: "Facebook",
-    color: "#3b5998",
-    link: "#",
-  },
-  {
-    icon: "fab fa-instagram",
-    label: "Instagram",
-    color: "#c32aa3",
-    link: "#",
-  },
-  {
-    icon: "fab fa-youtube",
-    label: "Youtube",
-    color: "#C4302B",
-    link: "#",
-  },
-];
+import { socialList } from "data/social";
 
 function SocialSection() {
   const theme = useTheme();
@@ -47,26 +28,37 @@ function SocialSection() {
       </Box>
 
       <div className="container-fluid d-flex justify-content-center align-items-center">
-        {socialIcons.map((item, i) => (
+        {socialList.map((item, i) => (
           <div
             style={{
-              marginRight: "8px"
+              marginRight: "8px",
             }}
             className="d-flex justify-content-center align-items-center"
             key={i}
           >
-            <IconButton>
-              <Icon
-                sx={{
-                  color: item.color,
+            <Button
+              variant="contained"
+              color="inherit"
+              onClick={() => {
+                window.open(item.link, "_target");
+              }}
+              startIcon={
+                <Icon
+                  sx={{
+                    color: item.color,
+                  }}
+                  className={item.icon}
+                ></Icon>
+              }
+            >
+              <span
+                style={{
+                  color: "#000000",
                 }}
-                className={item.icon}
-              ></Icon>
-            </IconButton>
-
-            <Typography variant="overline" fontWeight="bold">
-              {item.label}
-            </Typography>
+              >
+                {item.label}
+              </span>
+            </Button>
           </div>
         ))}
       </div>

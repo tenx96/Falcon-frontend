@@ -10,9 +10,9 @@ function Artists({ artist }) {
             <img src={artist.image} alt="cover" />
           </div>
           <div className="card-content">
-            <Typography variant="h5">{artist.name}</Typography>
+            <Typography variant="h5">{artist.title}</Typography>
             <Typography variant="subtitle2 m-0" component="p" gutterBottom>
-              {artist.desc}
+              {artist.subtitle}
             </Typography>
           </div>
         </div>

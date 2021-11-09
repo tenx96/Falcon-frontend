@@ -15,10 +15,12 @@ import {
 } from "@mui/material";
 import useColor from "customHooks/useColor";
 import React, { useState } from "react";
+import { useHistory } from "react-router";
 import "./style.css";
 
-function NavigationCards({ title, image, subTitle }) {
+function NavigationCards({ title, image, subTitle,route }) {
   const colors = useColor();
+  const history = useHistory()
 
   return (
     <Container
@@ -37,7 +39,9 @@ function NavigationCards({ title, image, subTitle }) {
           bgcolor: colors.background.main,
         }}
       >
-        <CardActionArea>
+        <CardActionArea onClick={() => {
+              history.push(route)
+        }}>
           <CardMedia
             component="img"
             height="140"

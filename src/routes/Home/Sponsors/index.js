@@ -3,24 +3,13 @@ import React from "react";
 import SponsorCard from "./SponsorCard";
 import "./sponsors.css";
 
-import sponsor1 from "assets/sponsors/sponsor-1.jpg"
-import sponsor2 from "assets/sponsors/sponsor-2.png"
-import sponsor3 from "assets/sponsors/sponsor-3.jpeg"
-
-
-
-const sponsorsList = [
-      sponsor1,
-      sponsor2,
-      sponsor3
-]
-
+import { sponsorsList } from "data/sponsors";
 
 function Sponsors() {
   return (
     <div>
       <Grid container sx={{display:'flex',justifyContent:'center'}} mt={10} >
-        <Grid item xs={12}>
+        <Grid item xs={12} mb={5}>
           <Typography
             textAlign="center"
             variant="h3"
@@ -42,6 +31,7 @@ function Sponsors() {
             sm={4}
             md={2}
             xs={6}
+            mb={5}
           >
             <SponsorCard image={item}/>
           </Grid>

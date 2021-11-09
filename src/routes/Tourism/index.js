@@ -2,10 +2,14 @@ import { Container, Box, Typography } from "@mui/material";
 import React from "react";
 import TourismCard from "./TourismCard";
 import "./tourism.css"
+import ComingSoon from "components/ComingSoon";
 export const ROUTE_TOURISM = "/tourism";
 
 function Tourism() {
+
+  return (<ComingSoon />);
   return (
+
     <Container className="tourism-container" maxWidth="lg">
       <Box my={3}>
         <Box my={4}>

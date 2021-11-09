@@ -11,6 +11,8 @@ import Home, { ROUTE_HOME } from "./routes/Home";
 import Lineup, { ROUTE_LINEUP } from "./routes/Lineup";
 import Tourism, { ROUTE_TOURISM } from "./routes/Tourism";
 import { CssBaseline } from "@mui/material";
+import Hotels , { ROUTE_HOTELS } from "./routes/Hotels";
+import Food , { ROUTE_FOOD } from "./routes/Food";
 export const ApplicationContext = React.createContext();
 
 export default function App() {
@@ -64,6 +66,8 @@ export default function App() {
               <Route path={ROUTE_ABOUT} component={About} />
               <Route path={ROUTE_LINEUP} component={Lineup} />
               <Route path={ROUTE_TOURISM} component={Tourism} />
+              <Route path={ROUTE_HOTELS} component={Hotels} />
+              <Route path={ROUTE_FOOD} component={Food} />
               <Route path={ROUTE_HOME} component={Home} />
             </Switch>
             </ThemeProvider>

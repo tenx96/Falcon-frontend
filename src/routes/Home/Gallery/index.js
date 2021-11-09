@@ -50,7 +50,7 @@ export default function GalleryImages(title = "Shots from last year", images) {
           ))}
         </ImageList>
       </Box>
-      <Box display="flex" justifyContent="center" alignItems="center">
+      {/* <Box display="flex" justifyContent="center" alignItems="center">
         <Button
           sx={{
             borderRadius: "100px",
@@ -60,7 +60,7 @@ export default function GalleryImages(title = "Shots from last year", images) {
         >
           See More
         </Button>
-      </Box>
+      </Box> */}
     </Box>
   );
 }

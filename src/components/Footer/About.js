@@ -2,12 +2,19 @@ import "./footer.css";
 
 import React from "react";
 import { Box, Button } from "@mui/material";
+import { useHistory } from "react-router";
+import { ROUTE_ABOUT } from "routes/About";
 
 function About() {
+  const history = useHistory();
+
   return (
     <Box>
       <Box display="flex" justifyContent="center">
         <Button
+          onClick={() => {
+            history.push(ROUTE_ABOUT);
+          }}
           sx={{
             color: "white",
           }}
@@ -17,15 +24,9 @@ function About() {
         </Button>
 
         <Button
-          sx={{
-            color: "white",
+          onClick={() => {
+            window.scrollTo(0,0);
           }}
-          variant="text"
-        >
-          Contact
-        </Button>
-
-        <Button
           sx={{
             color: "white",
           }}
@@ -34,7 +35,6 @@ function About() {
           Home
         </Button>
       </Box>
-    
     </Box>
   );
 }

@@ -1,43 +1,39 @@
 import "./footer.css";
 
 import React from "react";
-import { Box, Icon, Typography } from "@mui/material";
+import { Box, Icon, IconButton, Typography } from "@mui/material";
 
-const socialIcons = [
-  {
-    icon: "fab fa-facebook",
-    label: "Facebook",
-    link: "#",
-  },
-  {
-    icon: "fab fa-instagram",
-    label: "Instagram",
-    link: "#",
-  },
-  {
-    icon: "fas fa-envelope",
-    label: "Email",
-    link: "#",
-  },
-];
+import { socialList } from "data/social";
 
 function FooterSocial() {
   return (
     <Box>
       <Box>
-        <Typography color="white" textAlign="center" variant="h5" gutterBottom component="div">
+        <Typography
+          color="white"
+          textAlign="center"
+          variant="h5"
+          gutterBottom
+          component="div"
+        >
           Follow us
         </Typography>
       </Box>
       <Box display="flex" justifyContent="center">
-        {socialIcons.map((item, index) => (
+        {socialList.map((item, index) => (
           <Box key={index} ml={3}>
-            <Icon
-              sx={{
-                color: "white",
+            <IconButton
+              onClick={() => {
+                window.open(item.link, "_target");
               }}
-              className={item.icon}
-            ></Icon>
+            >
+              <Icon
+                sx={{
+                  color: "white",
+                }}
+                className={item.icon}
+              ></Icon>
+            </IconButton>
           </Box>
         ))}
       </Box>
