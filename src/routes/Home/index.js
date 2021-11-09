@@ -103,6 +103,12 @@ export default function Home() {
 
                   <Button
                     size="large"
+                    onClick={() => {
+                      window.open(
+                        "https://in.bookmyshow.com/ahmedabad/events/falcon-festival-2021/ET00316845",
+                        "_target"
+                      );
+                    }}
                     sx={{
                       borderRadius: "100px",
                       color: colors.accent.main,
