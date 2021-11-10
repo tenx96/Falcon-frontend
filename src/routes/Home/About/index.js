@@ -12,7 +12,7 @@ function AboutFalcon({ title, description }) {
         </Typography>
       </Box>
       <Box mt={4}>
-        <Typography variant="subtitle1" align="center">
+        <Typography color="text.secondary" variant="subtitle1" align="center">
           {aboutData.aboutFalcon.desc}
         </Typography>
       </Box>

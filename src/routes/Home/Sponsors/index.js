@@ -33,7 +33,7 @@ function Sponsors() {
             xs={6}
             mb={5}
           >
-            <SponsorCard image={item.image} title={item.title}/>
+            <SponsorCard image={item.image} title={item.title} width={item.width}/>
           </Grid>
         ))}
       </Grid>
