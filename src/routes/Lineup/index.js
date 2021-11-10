@@ -28,7 +28,7 @@ export default function Lineup() {
     <div className="lineup" style={{ backgroundColor: "#121212" }}>
       <Grid justifyContent="center" container spacing={4}>
         {artistList.map((item, i) => (
-          <Grid item md={4} xs={12}>
+          <Grid item md={3} xs={12}>
             <Artist artist={item} key={i} />
           </Grid>
         ))}

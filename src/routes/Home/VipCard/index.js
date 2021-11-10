@@ -20,7 +20,7 @@ function VipCard({ title, description, image }) {
               fontWeight: "bold",
               mt: 2,
             }}
-            variant="h3"
+            variant="h4"
             gutterBottom
             component="p"
           >

@@ -1,10 +1,10 @@
 import "./footer.css";
 
 import React from "react";
-import { Box, Button } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import { useHistory } from "react-router";
 import { ROUTE_ABOUT } from "routes/About";
-
+import { ROUTE_HOME } from "routes/Home";
 function About() {
   const history = useHistory();
 
@@ -25,7 +25,8 @@ function About() {
 
         <Button
           onClick={() => {
-            window.scrollTo(0,0);
+            history.push(ROUTE_HOME)
+            window.scrollTo(0,0)
           }}
           sx={{
             color: "white",

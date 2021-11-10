@@ -10,7 +10,7 @@ export const eventList = [
   },
   {
     title: "Battle of the Bands",
-    subtitle: "19th-20th Nov",
+    subtitle: "20th Nov",
     desc: "Get ready to witness the battle of bands from all over North East India.",
     image: eve2,
   },
