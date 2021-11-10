@@ -33,12 +33,12 @@ export const artistList = [
 export const secondaryArtists = [
   {
     title: "Outlast",
-    subtitle: "artist/band winners-Falcon 2020 Battle of Bands",
+    subtitle: "Artist/Band winners-Falcon 2020 Battle of Bands",
     image: artist01,
   },
   {
     title: "Hot Issue",
-    subtitle: "artist/Dance Group ",
+    subtitle: "Artist/Dance Group ",
     image: artist03,
   },
 ];

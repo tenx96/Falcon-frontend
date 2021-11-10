@@ -9,7 +9,7 @@ import { contactList } from "data/contactData";
 function Footer() {
   return (
     <div className="footer-content">
-      <Grid p={4} container height={350} width="100vw">
+      <Grid p={4} container width="100vw">
         <Grid item xs={12} md={4}>
           <FooterSocial />
         </Grid>
