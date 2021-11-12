@@ -6,7 +6,7 @@ import React from "react";
 export const ROUTE_FOOD = "/food";
 
 function Food() {
-  const [foodData, loading, isError] = useApi(getFood());
+  const [foodData, loading, isError] = useApi(getFood);
 
   return (
     <>

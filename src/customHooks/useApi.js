@@ -1,3 +1,4 @@
+import { getFood } from "api/foodApi";
 import React from "react";
 
 export const useApi = (promise) => {
@@ -7,22 +8,25 @@ export const useApi = (promise) => {
   const [error, setError] = React.useState(null);
 
   React.useEffect(() => {
-    setLoading(true);
-    promise
-      .then((res) => {
-        if (res.status < 300) {
-          setData(res.data);
-        } else {
+    const consumeAxiosPromise = () => {
+      setLoading(true);
+        promise()
+        .then((res) => {
+          if (res.status < 300) {
+            setData(res.data);
+          } else {
+            setError(res.data);
+          }
+          setLoading(false);
+        })
+        .catch((err) => {
+          setLoading(false);
           setIsError(true);
-          setError(res.data);
-        }
-        setLoading(false);
-      })
-      .catch((err) => {
-        setLoading(false);
-        setIsError(true);
-        setError(err);
-      });
+          setError(err);
+        });
+    };
+
+    consumeAxiosPromise();
   }, []);
 
   return [data, loading, isError, error];
