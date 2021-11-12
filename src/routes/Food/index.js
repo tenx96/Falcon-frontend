@@ -1,37 +1,57 @@
-import ComingSoon from 'components/ComingSoon'
-import axios from "axios"
-import React, { useEffect, useState } from 'react'
-import FoodCard from 'components/FoodCard'
-import { Grid } from "@mui/material";
-export const ROUTE_FOOD = "/food"
-
+import { Alert, AlertTitle, Box, CircularProgress, Grid } from "@mui/material";
+import { getFood } from "api/foodApi";
+import FoodCard from "components/FoodCard";
+import { useApi } from "customHooks/useApi";
+import React from "react";
+export const ROUTE_FOOD = "/food";
 
 function Food() {
-    const fetchData = () => {
-        return axios.get("https://5db305d7a394f5001443a97d.mockapi.io/api/v1/food")
-              .then((response) => { 
-                console.log(response.data)
-                setlist(response.data)
-              })}
+  const [foodData, loading, isError] = useApi(getFood());
 
-    const [list, setlist] = useState({})
-    useEffect(() => {
-        fetchData();
-        }, []);
-    return (
+  return (
     <>
-        {Object.keys(list).length > 0 ? <div className="food-list" style={{marginTop:'64px'}}>
-        <Grid justifyContent="center" container spacing={4}>
-        {list['food'].map((item, i) => (
-            <Grid item md={3} xs={12}>
-                <FoodCard food={item} key={i}/>
+      {!isError ? (
+        !loading && foodData ? (
+          <div className="food-list" style={{ marginTop: "64px" }}>
+            <Grid justifyContent="center" container spacing={4}>
+              {foodData["food"].map((item, i) => (
+                <Grid item md={3} xs={12}>
+                  <FoodCard food={item} key={i} />
+                </Grid>
+              ))}
             </Grid>
-        ))}
-        </Grid>
-        </div> : <ComingSoon></ComingSoon>}
-        
+          </div>
+        ) : (
+          <Box
+            sx={{
+              height: "100vh",
+              width: "100vw",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <CircularProgress />
+          </Box>
+        )
+      ) : (
+        <Box
+          sx={{
+            height: "100vh",
+            width: "100vw",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Alert severity="warning">
+            <AlertTitle>Warning</AlertTitle>
+            This is a warning alert — <strong>check it out!</strong>
+          </Alert>
+        </Box>
+      )}
     </>
-    )
+  );
 }
 
-export default Food
+export default Food;
