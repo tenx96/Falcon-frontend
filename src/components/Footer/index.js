@@ -1,12 +1,16 @@
-import "./footer.css";
-
+import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
-import { Grid, Typography, Box } from "@mui/material";
-import FooterSocial from "./social";
+import { useSelector } from "react-redux";
 import About from "./About";
-import { contactList } from "data/contactData";
+import "./footer.css";
+import FooterSocial from "./social";
+
 
 function Footer() {
+
+  const contacts = useSelector(state => state.home.contact)
+  const isLoaded = useSelector(state => state.home.isLoaded)
+
   return (
     <div className="footer-content">
       <Grid p={4} container width="100vw">
@@ -47,7 +51,7 @@ function Footer() {
               alignItems="center"
               flexDirection="column"
             >
-              {contactList.map((item, i) => (
+              {contacts.map((item, i) => (
                 <Typography variant="caption">{`${item.label} : ${item.contact}`}</Typography>
               ))}
             </Box>

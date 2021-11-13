@@ -2,10 +2,11 @@ import "./footer.css";
 
 import React from "react";
 import { Box, Icon, IconButton, Typography } from "@mui/material";
-
-import { socialList } from "data/social";
-
+import { useSelector } from "react-redux";
 function FooterSocial() {
+  const social = useSelector((state) => state.home.social);
+  const isLoaded = useSelector((state) => state.home.isLoaded);
+
   return (
     <Box>
       <Box>
@@ -20,7 +21,7 @@ function FooterSocial() {
         </Typography>
       </Box>
       <Box display="flex" justifyContent="center">
-        {socialList.map((item, index) => (
+        {social.map((item, index) => (
           <Box key={index} ml={3}>
             <IconButton
               onClick={() => {
