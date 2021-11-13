@@ -9,9 +9,8 @@ import {
 } from "@mui/material";
 import React from "react";
 import "./style.css";
-import { socialList } from "data/social";
 
-function SocialSection() {
+function SocialSection({data}) {
   const theme = useTheme();
   const smAndDown = useMediaQuery(theme.breakpoints.down("sm"));
 
@@ -29,7 +28,7 @@ function SocialSection() {
             
         }
       >
-        {socialList.map((item, i) => (
+        {data.map((item, i) => (
           <div
             style={{
               marginRight: "8px",

@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const axiosInstance = axios.create({
-    baseURL: 'https://5db305d7a394f5001443a97d.mockapi.io',
+    baseURL: 'https://falcon-2021-api.herokuapp.com',
     timeout: 2000,
     headers: {'X-Referer': 'Falcon-website'}
   });

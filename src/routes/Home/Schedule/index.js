@@ -9,9 +9,6 @@ import ExpandableTypography from "components/ExpandableTypography";
 import * as React from "react";
 import "./style.css";
 import MobileImageSlider from "./MobileSchedule";
-
-import mockData from "./mockData.json";
-
 const parseData = (data) => {
   return { ...data, images: data.images.map((item) => item.imgPath) };
 };
@@ -87,7 +84,7 @@ function MobileView({ title, description, images }) {
   );
 }
 
-export default function Schedule() {
+export default function Schedule({data}) {
   const [tab, setTab] = React.useState(0);
 
   const theme = useTheme();
@@ -98,13 +95,13 @@ export default function Schedule() {
       <Grid container justifyContent="center" alignItems="center">
         <Grid item xs={12} marginTop="24px">
           {tab === 0 && mdAndUp && (
-            <DesktopSchedule {...parseData(mockData.day1)} />
+            <DesktopSchedule {...parseData(data.day1)} />
           )}
-          {tab === 0 && !mdAndUp && <MobileView {...parseData(mockData.day1)} />}
+          {tab === 0 && !mdAndUp && <MobileView {...parseData(data.day1)} />}
           {tab === 1 && mdAndUp && (
-            <DesktopSchedule {...parseData(mockData.day2)} />
+            <DesktopSchedule {...parseData(data.day2)} />
           )}
-          {tab === 1 && !mdAndUp && <MobileView {...parseData(mockData.day2)} />}
+          {tab === 1 && !mdAndUp && <MobileView {...parseData(data.day2)} />}
         </Grid>
         <Grid
           item
