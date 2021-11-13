@@ -6,6 +6,13 @@ import { Grid } from "@mui/material";
 
 import { artistList, secondaryArtists } from "data/artists";
 import { eventList } from "data/events";
+import { useApi } from "customHooks/useApi";
+import { useDispatch, useSelector } from "react-redux";
+import { updateArtists } from "store/artists";
+import { updateHomeLoaded } from "store/home";
+import { updateArtistsLoaded } from "store/artists";
+import { getArtists } from "api/artistsApi";
+import PageLoader from "components/loaders/PageLoader";
 export const ROUTE_LINEUP = "/lineup";
 
 export default function Lineup() {
@@ -24,16 +31,20 @@ export default function Lineup() {
     return COLOR_LIST[0];
   };
 
-  return (
+  const dispatch = useDispatch();
+
+  const artistData = useSelector((state) => state.artist);
+
+  return artistData.isLoaded ? (
     <div className="lineup" style={{ backgroundColor: "#121212" }}>
       <Grid justifyContent="center" container spacing={4}>
-        {artistList.map((item, i) => (
+        {artistData.mainArtists.map((item, i) => (
           <Grid item lg={3} md={4} xs={12}>
             <Artist artist={item} key={i} />
           </Grid>
         ))}
         <Grid item xs={12}></Grid>
-        {secondaryArtists.map((item, i) => (
+        {artistData.secondaryArtists.map((item, i) => (
           <Grid item md={6} lg={4} xs={12}>
             <Artist artist={item} key={i} />
           </Grid>
@@ -47,5 +58,7 @@ export default function Lineup() {
         </div>
       </section>
     </div>
+  ) : (
+    <PageLoader />
   );
 }

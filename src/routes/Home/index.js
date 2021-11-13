@@ -9,24 +9,18 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import { getHomeDetails } from "api/home";
 import ArtistCard from "components/ArtistCard";
 import BannerImage from "components/Banner";
-import HomePageLoader from "components/loaders/HomePageLoader";
-import { useApi } from "customHooks/useApi";
+import PageLoader from "components/loaders/PageLoader";
 import useColors from "customHooks/useColor";
 import { announcementsList } from "data/announcements";
-import { artistList } from "data/artists";
 import React from "react";
 import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
 import { useHistory } from "react-router";
 import { ROUTE_FOOD } from "routes/Food";
 import { ROUTE_HOTELS } from "routes/Hotels";
 import { ROUTE_LINEUP } from "routes/Lineup";
 import { ROUTE_TOURISM } from "routes/Tourism";
-import { updateHomeLoaded } from "store/home";
-import { updateHomeData } from "store/home";
 import AboutFalcon from "./About";
 import GalleryImages from "./Gallery";
 import "./home.css";
@@ -45,25 +39,14 @@ export default function Home() {
   const lgAndUp = useMediaQuery(theme.breakpoints.up("lg"));
   const colors = useColors();
   const history = useHistory();
-  const dispatch = useDispatch();
   const data = useSelector((state) => state.home);
   const isLoaded = data.isLoaded;
 
-  useApi(
-    getHomeDetails,
-    (data) => {
-      // success
-      console.log("successfully fetched data , ", data);
-      dispatch(updateHomeData(data));
-      dispatch(updateHomeLoaded(true));
-    },
-    () => {
-      dispatch(updateHomeLoaded(false));
-    },
-    isLoaded
-  );
 
-  return isLoaded ? (
+  const artistData = useSelector(state => state.artist)
+
+
+  return isLoaded && artistData.isLoaded ? (
     <Box
       height="100%"
       width="100%"
@@ -99,13 +82,9 @@ export default function Home() {
                 />
               </Grid>
 
-              {artistList.map((item, i) => (
+              {artistData.mainArtists.map((item, i) => (
                 <Grid key={i} mb={3} item xs={12} sm={6}>
-                  <ArtistCard
-                    title={item.title}
-                    subtitle={item.subtitle}
-                    image={item.image}
-                  />
+                  <ArtistCard data={item} />
                 </Grid>
               ))}
 
@@ -235,6 +214,6 @@ export default function Home() {
       </div>
     </Box>
   ) : (
-    <HomePageLoader />
+    <PageLoader />
   );
 }

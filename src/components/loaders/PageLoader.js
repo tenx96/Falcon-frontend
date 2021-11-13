@@ -1,7 +1,7 @@
 import { Box, CircularProgress } from "@mui/material";
 import React from "react";
 
-function HomePageLoader() {
+function PageLoader() {
   return (
     <Box
       height="100vh"
@@ -15,4 +15,4 @@ function HomePageLoader() {
   );
 }
 
-export default HomePageLoader;
+export default PageLoader;

@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Container, Typography } from "@mui/material";
 import "./style.css";
 import { useSelector } from "react-redux";
-import HomePageLoader from "components/loaders/HomePageLoader";
+import PageLoader from "components/loaders/PageLoader";
 
 export const ROUTE_ABOUT = "/about";
 
@@ -30,13 +30,13 @@ export default function About() {
           </Typography>
         </Box>
         <Box mt={4} mb={10}>
-          <Typography variant="subtitle1" align="center">
+          <Typography color="text.secondary" variant="subtitle1" align="center">
             {about.aboutFalcon.desc}
           </Typography>
         </Box>
       </Box>
     </Container>
   ) : (
-    <HomePageLoader />
+    <PageLoader />
   );
 }

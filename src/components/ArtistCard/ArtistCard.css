@@ -1,5 +1,5 @@
 .artist-img {
-  object-fit: scale-down;
+  object-fit: cover;
   width: 100%;
   max-height: 400px;
   box-shadow: 0 8px 20px -4px hsl(0, 0%, 5%);
