@@ -10,6 +10,8 @@ import { useApi } from "customHooks/useApi";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import AdminLogin from "routes/admin/login";
+import { ROUTE_ADMIN_LOGIN } from "routes/admin/login";
 import { updateArtists } from "store/artists";
 import { updateArtistsLoaded } from "store/artists";
 import { updateHomeData, updateHomeLoaded } from "store/home";
@@ -102,6 +104,7 @@ export default function App() {
               <Route path={ROUTE_TOURISM} component={Tourism} />
               <Route path={ROUTE_HOTELS} component={Hotels} />
               <Route path={ROUTE_FOOD} component={Food} />
+              <Route path={ROUTE_ADMIN_LOGIN} component={AdminLogin} />
               <Route path={ROUTE_HOME} component={Home} />
             </Switch>
           </ThemeProvider>
