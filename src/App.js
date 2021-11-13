@@ -11,10 +11,14 @@ import Home, { ROUTE_HOME } from "./routes/Home";
 import Lineup, { ROUTE_LINEUP } from "./routes/Lineup";
 import Tourism, { ROUTE_TOURISM } from "./routes/Tourism";
 import { CssBaseline } from "@mui/material";
-import Hotels , { ROUTE_HOTELS } from "./routes/Hotels";
-import Food , { ROUTE_FOOD } from "./routes/Food";
-export const ApplicationContext = React.createContext();
+import Hotels, { ROUTE_HOTELS } from "./routes/Hotels";
+import Food, { ROUTE_FOOD } from "./routes/Food";
+import store from "store";
 
+import { Provider } from "react-redux";
+
+
+export const ApplicationContext = React.createContext();
 export default function App() {
   const routes = [
     {
@@ -36,7 +40,6 @@ export default function App() {
   ];
 
   const theme = createTheme({
-    
     palette: {
       mode: "dark",
       primary: {
@@ -45,36 +48,36 @@ export default function App() {
       secondary: {
         main: green[500],
       },
-      background : {
-        main : "#121212",
-        paper : "#181818",
-        hover : "#282828"
-      }
+      background: {
+        main: "#121212",
+        paper: "#181818",
+        hover: "#282828",
+      },
     },
   });
 
   return (
     <React.StrictMode>
-      
+      <Provider store={store}>
         <Router>
           <div>
             {/* <ApplicationBar title="Falcon Festival" routes={routes} /> */}
             <Navbar title="Falcon Festival" routes={routes} />
             <ThemeProvider theme={theme}>
-              <CssBaseline/>
-            <Switch>
-              <Route path={ROUTE_ABOUT} component={About} />
-              <Route path={ROUTE_LINEUP} component={Lineup} />
-              <Route path={ROUTE_TOURISM} component={Tourism} />
-              <Route path={ROUTE_HOTELS} component={Hotels} />
-              <Route path={ROUTE_FOOD} component={Food} />
-              <Route path={ROUTE_HOME} component={Home} />
-            </Switch>
+              <CssBaseline />
+              <Switch>
+                <Route path={ROUTE_ABOUT} component={About} />
+                <Route path={ROUTE_LINEUP} component={Lineup} />
+                <Route path={ROUTE_TOURISM} component={Tourism} />
+                <Route path={ROUTE_HOTELS} component={Hotels} />
+                <Route path={ROUTE_FOOD} component={Food} />
+                <Route path={ROUTE_HOME} component={Home} />
+              </Switch>
             </ThemeProvider>
             <Footer></Footer>
           </div>
         </Router>
-      
+      </Provider>
     </React.StrictMode>
   );
 }
