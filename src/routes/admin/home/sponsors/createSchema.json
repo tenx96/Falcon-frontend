@@ -1,0 +1,15 @@
+[
+    {
+        "label": "Title",
+        "fieldName": "title",
+        "required": true,
+        "initial": "title"
+    },
+    {
+        "label": "Image",
+        "required": true,
+        "fieldName": "image",
+        "type": "image",
+        "preview": "imageurlhere"
+    }
+]
