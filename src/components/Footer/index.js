@@ -52,7 +52,7 @@ function Footer() {
               flexDirection="column"
             >
               {contacts.map((item, i) => (
-                <Typography variant="caption">{`${item.label} : ${item.contact}`}</Typography>
+                <Typography key={i} variant="caption">{`${item.label} : ${item.contact}`}</Typography>
               ))}
             </Box>
           </Box>

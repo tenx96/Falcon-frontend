@@ -1,3 +1,11 @@
 .text-field-white-text > div >  input {
   color: whitesmoke;
 }
+
+.text-field-white-text > div > textarea {
+  color: whitesmoke;
+}
+
+.text-select-white-text > div {
+  color: whitesmoke;
+}

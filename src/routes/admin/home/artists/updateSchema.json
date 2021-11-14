@@ -1,0 +1,44 @@
+[
+    {
+        "label": "Title",
+        "fieldName": "title",
+        "required": false,
+        "initial": "title"
+    },
+    {
+        "label": "Subtitle",
+        "required": false,
+        "fieldName": "subtitle",
+        "initial": "subtitle"
+    },
+    {
+        "label": "Description",
+        "required": false,
+        "fieldName": "desc",
+        "multiline": true,
+        "initial": "desc"
+    },
+    {
+        "label": "type",
+        "type": "options",
+        "required": true,
+        "fieldName": "type",
+        "options": [
+            {
+                "label": "Main",
+                "value": "MAIN"
+            },
+            {
+                "label": "Secondary",
+                "value": "SECONDARY"
+            }
+        ]
+    },
+    {
+        "label": "Image",
+        "required": false,
+        "fieldName": "image",
+        "type": "image",
+        "preview": "imageurlhere"
+    }
+]

@@ -1,0 +1,4 @@
+modal-wrapper {
+    height: calc(100vh - 20%);
+    width: calc(100vw - 30%);
+}

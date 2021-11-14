@@ -10,8 +10,15 @@ import {
   IconButton,
 } from "@mui/material";
 import { loginAsAdmin } from "api/authApi";
+import { JWT_EXPIRY_LOCALE } from "config";
+import { JWT_EXPIRY_MS } from "config";
+import { JWT_KEY } from "config";
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router";
+import { updateAlert } from "store/alert";
 import { validateEmail } from "utils/validator";
+import { ROUTE_ADMIN_HOME } from "../home";
 
 import "../style.common.css";
 export const ROUTE_ADMIN_LOGIN = "/admin/login";
@@ -25,6 +32,46 @@ function AdminLogin() {
     valid: false,
     showPassword: false,
   });
+  const dispatch = useDispatch();
+  const [inProgress, setInProgress] = useState(false);
+  const history = useHistory()
+
+  const login = async (email, password) => {
+    setInProgress(true);
+    loginAsAdmin(email.value, password.value)
+      .then((res) => {
+        if (res.status == 200) {
+          localStorage.setItem(JWT_KEY, res.data.token);
+          const ms = Date.now() + res.data.expiriesIn;
+          localStorage.setItem(JWT_EXPIRY_MS, ms);
+          localStorage.setItem(
+            JWT_EXPIRY_LOCALE,
+            new Date(ms).toLocaleString()
+          );
+          dispatch(
+            updateAlert({
+              message: "Logged in successfully",
+              title: "Admin Login",
+              type: "success",
+            })
+          );
+          setInProgress(false);
+          history.push(ROUTE_ADMIN_HOME)
+        }else {
+          throw new Error("Error logging in")
+        }
+      })
+      .catch((err) => {
+        dispatch(
+          updateAlert({
+            message: "An error occured while trying to login",
+            title: "Admin Login Error",
+            type: "error",
+          })
+        );
+        setInProgress(false);
+      });
+  };
 
   return (
     <div>
@@ -91,13 +138,9 @@ function AdminLogin() {
         </FormControl>
         <Button
           onClick={() => {
-            loginAsAdmin(email.value, password.value).then((res) => {
-              if (res.status == 200) {
-                localStorage.setItem("auth_token", res.data.token);
-              }
-            });
+            login(email, password);
           }}
-          disabled={!email.valid || !password.valid}
+          disabled={inProgress || !email.valid || !password.valid}
           variant="contained"
         >
           Login

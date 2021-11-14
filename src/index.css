@@ -3,6 +3,13 @@ body {
     overflow-x: hidden;
 }
 
+.notification-wrapper {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1500;
+}
+
 
 .main-container {
     margin-top: 64px;

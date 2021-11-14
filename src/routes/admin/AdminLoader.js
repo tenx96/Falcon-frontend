@@ -2,13 +2,13 @@ import { Box, CircularProgress } from "@mui/material";
 import useColor from "customHooks/useColor";
 import React from "react";
 
-function PageLoader() {
+function AdminLoader() {
   const colors = useColor()
 
   return (
     <Box
-      height="100vh"
-      width="100vw"
+      height="500px"
+      width="100%"
       display="flex"
       justifyContent="center"
       alignItems="center"
@@ -19,4 +19,4 @@ function PageLoader() {
   );
 }
 
-export default PageLoader;
+export default AdminLoader;
