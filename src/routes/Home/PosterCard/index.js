@@ -60,7 +60,7 @@ function PosterSlider({ data }) {
                       display: "block",
                       overflow: "hidden",
                     }}
-                    src={item.image}
+                    src={item.images[0].imageUrl}
                     alt="event image"
                   />
                 ) : null}

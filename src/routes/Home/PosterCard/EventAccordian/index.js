@@ -13,10 +13,10 @@ import "./style.css";
 function EventAccordian({
   expanded,
   handleChange,
-  image,
+  images,
   title,
   subtitle,
-  description,
+  desc,
   links,
 }) {
   return (
@@ -29,7 +29,7 @@ function EventAccordian({
         <Box display="flex" justifyContent="start" alignItems="center">
           <img
             className="accordian-thumbnail"
-            src={image}
+            src={images[0].imageUrl}
             alt="random-kitten"
           />
           <Box ml={2}>
@@ -39,7 +39,7 @@ function EventAccordian({
         </Box>
       </AccordionSummary>
       <AccordionDetails>
-        <Typography>{description}</Typography>
+        <Typography>{desc}</Typography>
         {links && (
           <Box display="flex" justifyContent="end" mt={2}>
             {links.map((item, i) => (

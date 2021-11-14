@@ -12,6 +12,7 @@ import {
 import ArtistCard from "components/ArtistCard";
 import BannerImage from "components/Banner";
 import PageLoader from "components/loaders/PageLoader";
+import { useAnnouncementReload } from "customHooks/data/useAnnouncementReload";
 import useColors from "customHooks/useColor";
 import { announcementsList } from "data/announcements";
 import React from "react";
@@ -44,6 +45,13 @@ export default function Home() {
 
 
   const artistData = useSelector(state => state.artist)
+
+
+
+  const annceData = useSelector(state => state.announcement)
+
+  useAnnouncementReload([])
+
 
 
   return isLoaded && artistData.isLoaded ? (
@@ -142,7 +150,7 @@ export default function Home() {
                   </Typography>
                 </Grid>
                 <Grid item xs={12}>
-                  <PosterSlider data={announcementsList} />
+                  <PosterSlider data={annceData.announcements} />
                 </Grid>
                 <Grid my="auto" px={3} item xs={12}>
                   <SocialSection data={data.social} />
