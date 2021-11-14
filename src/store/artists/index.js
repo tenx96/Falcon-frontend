@@ -1,7 +1,7 @@
 import { createSlice, configureStore } from "@reduxjs/toolkit";
 
 const artistSlice = createSlice({
-  name: "home",
+  name: "artist",
   initialState: {
     artists: [],
 

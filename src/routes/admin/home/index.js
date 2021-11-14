@@ -15,6 +15,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import React, { useEffect, useState } from "react";
 import { Route, useHistory } from "react-router";
+import AnnouncementAdmin, { ROUTE_ADMIN_ANNOUNCEMENTS } from "./announcements";
 import ArtistAdmin, { ROUTE_ADMIN_ARTIST } from "./artists";
 import ScheduleAdmin, { ROUTE_ADMIN_SCHEDULE } from "./schedule";
 import SponsorAdmin, { ROUTE_ADMIN_SPONSORS } from "./sponsors";
@@ -44,6 +45,10 @@ function AdminDashboard(props) {
     {
       label: "Schedule",
       route: ROUTE_ADMIN_SCHEDULE,
+    },
+    {
+      label: "Announcements",
+      route: ROUTE_ADMIN_ANNOUNCEMENTS,
     },
   ];
   const history = useHistory();
@@ -154,6 +159,7 @@ function AdminDashboard(props) {
         <Route path={ROUTE_ADMIN_ARTIST} component={ArtistAdmin} />
         <Route path={ROUTE_ADMIN_SCHEDULE} component={ScheduleAdmin} />
         <Route path={ROUTE_ADMIN_SPONSORS} component={SponsorAdmin} />
+        <Route path={ROUTE_ADMIN_ANNOUNCEMENTS} component={AnnouncementAdmin} />
       </Box>
     </Box>
   );

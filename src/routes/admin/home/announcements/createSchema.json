@@ -1,0 +1,28 @@
+[
+    {
+        "label": "Title",
+        "fieldName": "title",
+        "required": true,
+        "initial": "title"
+    },
+    {
+        "label": "Subtitle",
+        "required": true,
+        "fieldName": "subtitle",
+        "initial": "subtitle"
+    },
+    {
+        "label": "Description",
+        "required": true,
+        "fieldName": "desc",
+        "multiline": true,
+        "initial": "desc"
+    },
+    {
+        "label": "Image",
+        "required": true,
+        "fieldName": "image",
+        "type": "image",
+        "preview": "imageurlhere"
+    }
+]
