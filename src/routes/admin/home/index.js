@@ -15,11 +15,13 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import React, { useEffect, useState } from "react";
 import { Route, useHistory } from "react-router";
+import { ROUTE_ADMIN_LOGIN } from "../login";
 import AnnouncementAdmin, { ROUTE_ADMIN_ANNOUNCEMENTS } from "./announcements";
 import ArtistAdmin, { ROUTE_ADMIN_ARTIST } from "./artists";
 import ScheduleAdmin, { ROUTE_ADMIN_SCHEDULE } from "./schedule";
 import SponsorAdmin, { ROUTE_ADMIN_SPONSORS } from "./sponsors";
 import "./style.css";
+import VipAdmin, { ROUTE_VIP_ADMIN } from "./VipAdmin";
 
 const drawerWidth = 240;
 
@@ -49,6 +51,14 @@ function AdminDashboard(props) {
     {
       label: "Announcements",
       route: ROUTE_ADMIN_ANNOUNCEMENTS,
+    },
+    {
+      label: "Login",
+      route: ROUTE_ADMIN_LOGIN,
+    },
+    {
+      label: "VIP",
+      route: ROUTE_VIP_ADMIN,
     },
   ];
   const history = useHistory();
@@ -160,6 +170,7 @@ function AdminDashboard(props) {
         <Route path={ROUTE_ADMIN_SCHEDULE} component={ScheduleAdmin} />
         <Route path={ROUTE_ADMIN_SPONSORS} component={SponsorAdmin} />
         <Route path={ROUTE_ADMIN_ANNOUNCEMENTS} component={AnnouncementAdmin} />
+        <Route path={ROUTE_VIP_ADMIN} component={VipAdmin} />
       </Box>
     </Box>
   );

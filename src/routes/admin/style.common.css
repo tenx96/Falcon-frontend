@@ -9,3 +9,11 @@
 .text-select-white-text > div {
   color: whitesmoke;
 }
+
+.dropzone-wrapper > div {
+  background: #424242;
+}
+
+.dropzone-wrapper > div > div > svg {
+  color: white;
+}

@@ -1,5 +1,6 @@
 import { Alert, AlertTitle, Box, CircularProgress, Grid } from "@mui/material";
 import { getFood } from "api/foodApi";
+import ComingSoon from "components/ComingSoon";
 import FoodCard from "components/FoodCard";
 import { useApi } from "customHooks/useApi";
 import React from "react";
@@ -7,7 +8,7 @@ export const ROUTE_FOOD = "/food";
 
 function Food() {
   const [foodData, loading, isError] = useApi(getFood);
-
+  return <ComingSoon></ComingSoon>;
   return (
     <>
       {!isError ? (
