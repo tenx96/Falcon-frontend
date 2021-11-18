@@ -7,7 +7,7 @@ const jwt = localStorage.getItem(JWT_KEY);
 // baseURL: "https://falcon-2021-api.herokuapp.com"
 
 const axiosInstance = axios.create({
-  baseURL: "http://localhost:5000",
+  baseURL: "https://falcon-2021-api.herokuapp.com",
   timeout: 10000,
   headers: { "X-Referer": "Falcon-website" },
 });
